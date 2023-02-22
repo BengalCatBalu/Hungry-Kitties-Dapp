@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mysten/sui.js": "^0.28.0",
+    "@originbyte/js-sdk": "^0.20.21",
+    "ethos-connect": "^0.0.100",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
