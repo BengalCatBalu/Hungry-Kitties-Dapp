@@ -1,5 +1,6 @@
 import './App.css'
 import { SignInButton, ethos } from "ethos-connect";
+import Test from './Components/Test';
 
 function App() {
   const { status, wallet } = ethos.useWallet();
@@ -11,10 +12,11 @@ function App() {
           Connect
         </SignInButton>
       ) : (
-        <>
-          {wallet.address}
-        </>
+        <div>
+          <ethos.components.AddressWidget/>
+        </div>
       )}
+      <Test />
     </div>
   )
 }
