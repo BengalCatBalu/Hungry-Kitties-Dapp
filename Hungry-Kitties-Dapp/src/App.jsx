@@ -1,20 +1,23 @@
 //import './App.css'
 import { SignInButton, ethos } from "ethos-connect";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Account from "./Pages/Account/Account";
+import Collections from "./Pages/Collections/Collections";
+import MainPage from "./Pages/MainPage/MainPage";
+
 
 function App() {
-  const { status, wallet } = ethos.useWallet();
 
   return (
     <div className="App">
-      {!wallet ? (
-        <SignInButton className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-          Connect
-        </SignInButton>
-      ) : (
-        <div>
-          <ethos.components.AddressWidget/>
-        </div>
-      )}
+    <Router>
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route path="/collections" component={Collections} />
+        <Route path="/account" component={Account} />
+      </Switch>
+    </Router>
     </div>
   )
 }
