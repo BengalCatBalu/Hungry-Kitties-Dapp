@@ -31,6 +31,7 @@ module hkplatform::DonationCollection {
         ipfs_folder_url: vector<u8>,
         owner: address,
         // Addresses that donated
+        // comment
         //addresses: vector<address>;
     }
 
