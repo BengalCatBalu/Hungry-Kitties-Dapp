@@ -1,7 +1,7 @@
-import Information from "./Information/Information";
-import Notification from "./Notification/Notification";
-import Profile from "./Profile/Profile";
-import SideBar from "./SideBar/SideBar";
+import Information from "./Information/Information.jsx";
+import Notification from "./Notification/Notification.jsx";
+import Profile from "./Profile/Profile.jsx";
+import SideBar from "./SideBar/SideBar.jsx";
 
 export {Information, Notification, Profile, SideBar}
 
