@@ -1,4 +1,4 @@
-import './App.css'
+//import './App.css'
 //import { SignInButton, ethos } from "ethos-connect";
 //import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom'

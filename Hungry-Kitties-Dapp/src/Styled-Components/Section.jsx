@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Section = styled.section`
     min-height: ${props => props.min_height || `80vh`};
-    width:${props => props.weight || `100%`};;
+    width:${props => props.width || `100%`};;
     background-color: ${props => props.bgcolor || `white`};
     color: ${props => props.txtcolor || 'black'};
     display: ${props => props.display || `flex`};
