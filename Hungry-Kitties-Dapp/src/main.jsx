@@ -1,20 +1,26 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import ReactDOM from 'react-dom'
+import App from './App.jsx'
 import './index.css'
 import { EthosConnectProvider } from 'ethos-connect';
+import { BrowserRouter } from 'react-router-dom'
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+ReactDOM.render(
   <React.StrictMode>
-    <EthosConnectProvider
-      ethosConfiguration={{
-        hideEmailSignIn: true, // defaults to false
-        connectMessage:'Your connect message goes here!',
-        dappName:"Hungry Kitties"
-      }}
-    >
-      <App />
-    </EthosConnectProvider>
+    <BrowserRouter>
+      <EthosConnectProvider
+        ethosConfiguration={{
+          hideEmailSignIn: true, // defaults to false
+          connectMessage: 'Your connect message goes here!',
+          dappName: "Hungry Kitties"
+        }}
+      >
+        <App />
+      </EthosConnectProvider>
+      </BrowserRouter>
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);
+
