@@ -21,6 +21,11 @@ const Image = styled.img`
 
   /* The border radius of the image */
   border-radius: ${props => props.borderRadius ? props.borderRadius : '0'};
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export default Image;
