@@ -12,13 +12,11 @@ module hkplatform::DonationCollection {
     use std::vector;
     use sui::transfer;
     use hkplatform::user::{Self, User};
+    use hkplatform::admin::{Self, Admin};
 
     const ETooManyNfts: u64 = 0;
     const EInsufficientBalance: u64 = 0;
 
-    struct Admin has key {
-        id: UID,
-    }
 
     struct DonationCollection has key {
         id: UID,
