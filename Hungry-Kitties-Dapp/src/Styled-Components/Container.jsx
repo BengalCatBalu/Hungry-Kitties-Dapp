@@ -9,7 +9,7 @@ const Container = styled.div`
   margin: ${props => props.margin ? props.margin : '1rem auto'};
   margin-bottom: ${props => props.marginBottom ? props.marginBottom : '0'};
   background-color: ${props => props.bgcolor ? props.bgcolor : COLOR_BLACK};
-  display: flex;
+  display: ${props => props.display ? props.display : 'flex'};
   flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};
   align-items: ${props => props.alignItems ? props.alignItems : 'center'};
   justify-content: ${props => props.justifyContent ? props.justifyContent : 'center'};

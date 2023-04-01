@@ -11,24 +11,27 @@ import Profile from './Profile/Profile'
 
 const NavBar = () => {
   return (
-    <Section min_height = "10vh"
-    bgcolor ={COLOR_BLACK}
-    txtcolor = {COLOR_ORANGE}
-    size_text = "2vw"
-    weight_text = "bold">
-      <Container bgcolor = {COLOR_BLACK}
-      gap = "10vw"
->
+    <Section
+      max_height="20vh"
+      bgcolor={COLOR_BLACK}
+      txtcolor={COLOR_ORANGE}
+      size_text="1.5vw"
+      weight_text="bold"
+    >
+      <Container
+        gap="13vw"
+        margin = "0"
+      >
         <Logo />
         <Home />
         <Collection />
         <Profile />
         <div>Connect Button</div>
-        
+
       </Container>
-      
+
     </Section>
-    
+
   )
 }
 

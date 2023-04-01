@@ -11,7 +11,7 @@ export const AIRTABLE_TABLE_NAME = "Events";
 
 // Colors
 export const COLOR_WHITE = "#ffffff";
-export const COLOR_BLACK = "#000000";
+export const COLOR_BLACK = "#1A1A1A";
 export const COLOR_ORANGE = "#DD6B20";
 
 // Text parameters

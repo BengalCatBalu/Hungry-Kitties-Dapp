@@ -31,8 +31,8 @@ const MenuContent = styled.ul`
 `;
 
 const MenuLink = styled.li`
-  padding: 2vh 1.5vw;
-  font-size: 4vh;
+  padding: 1.5vh 1.5vw;
+  font-size: 2.5vh;
   color: black;
 `;
 

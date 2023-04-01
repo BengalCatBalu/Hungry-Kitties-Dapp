@@ -21,7 +21,7 @@ const MarqueeWrapper = styled.div`
   background-color: white;
   width: 100%;
   height: 5vh;
-  margin-top: 30vh;
+  margin-top: 15vh;
   align-items: center;
   justify-content: center;
 `;
