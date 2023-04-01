@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Information = () => {
-  return (
-    <div>About us</div>
-  )
-}
+  const history = useHistory();
 
-export default Information
+  const handleClick = () => {
+    history.push("/information");
+  };
+
+  return <div onClick={handleClick}>Infromation</div>;
+};
+
+export default Information;
