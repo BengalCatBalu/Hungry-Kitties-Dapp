@@ -7,11 +7,13 @@ import { Routes, Route } from 'react-router-dom'
 import MainPage from "./Pages/MainPage/MainPage";
 import Collections from './Pages/Collections/Collections';
 import Account from './Pages/Account/Account';
+import NavBar from './Components/NavBar/NavBar';
 
 
 function App() {
   return (
     <>
+      <NavBar />
       <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/collections' element={<Collections/>}/>
