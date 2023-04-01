@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Section = styled.section`
+    padding: ${props => props.padding || `0`};
+    margin: ${props => props.margin || `0`};
     min-height: ${props => props.min_height || `80vh`};
     width:${props => props.width || `100%`};
     background-color: ${props => props.bgcolor || `white`};
