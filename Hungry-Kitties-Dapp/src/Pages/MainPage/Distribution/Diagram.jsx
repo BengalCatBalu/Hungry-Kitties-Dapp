@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import Container from '../../../Styled-Components/Container';
+import Box from '../../../Styled-Components/Box';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const data = {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ['Shelters', 'Ecosystem', 'Team'],
   datasets: [
     {
-      label: '# of Votes',
-      data: [12, 19, 3],
+      label: 'Distribution of funds from events in %',
+      data: [90, 5, 5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -29,9 +29,9 @@ const data = {
 
 const Diagram = () => {
   return (
-    <Container>
+    <Box width = "45%" height = "45%">
       <Doughnut data={data} />
-    </Container>
+    </Box>
   );
 };
 

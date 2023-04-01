@@ -20,4 +20,5 @@ export const MEDIUM_TITLE_TEXT = `6vh`;
 export const LOCAL_TITLE_TEXT = `3vh`;
 export const MEDIUM_TEXT = `1.5vh`;
 export const SMALL_TEXT = `1vh`;
+export const BUTTON_TEXT = "2vh";
 

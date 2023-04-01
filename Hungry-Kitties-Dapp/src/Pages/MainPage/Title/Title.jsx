@@ -10,7 +10,7 @@ import Marquee from './Marquee.jsx';
 
 function Title() {
     return (
-        <Section bgcolor = {COLOR_BLACK} txtcolor = {COLOR_WHITE} width = "100%">
+        <Section bgcolor = {COLOR_BLACK} txtcolor = {COLOR_WHITE} width = "100%" min_height = "80vh">
             <SpecialText fsize = {GLOBAL_TITLE_TEXT} stroke = {`0.4vh ${COLOR_ORANGE}`} fill = {COLOR_BLACK} >
                 Hungry Kitties
             </SpecialText>
@@ -32,7 +32,6 @@ function Title() {
                     </Text>
                 </Button>
             </Container>
-            <Marquee>Hungry Kitties</Marquee>
         </Section>
     );
 }

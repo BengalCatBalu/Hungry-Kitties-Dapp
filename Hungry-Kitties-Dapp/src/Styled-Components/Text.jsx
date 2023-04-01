@@ -8,6 +8,7 @@ const Text = styled.h1`
   opacity: ${props => props.opacity || null};
   white-space: ${props => props.white_space || `pre-line`};
   font-weight: ${props => props.font_weight || `normal`};
+  margin-right: ${props => props.margin_right || null};
 `;
 
 export default Text;

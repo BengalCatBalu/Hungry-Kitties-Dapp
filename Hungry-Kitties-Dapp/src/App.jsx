@@ -1,4 +1,4 @@
-//import './App.css'
+import './App.css'
 //import { SignInButton, ethos } from "ethos-connect";
 //import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom'
@@ -8,17 +8,21 @@ import MainPage from "./Pages/MainPage/MainPage";
 import Collections from './Pages/Collections/Collections';
 import Account from './Pages/Account/Account';
 import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
+import GlobalStyles from './GlobalStyles';
 
 
 function App() {
   return (
     <>
+      <GlobalStyles/>
       <NavBar />
       <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/collections' element={<Collections/>}/>
-          <Route path='/account' element={<Account/>} />
+        <Route path='/' element={<MainPage />} />
+        <Route path='/collections' element={<Collections />} />
+        <Route path='/account' element={<Account />} />
       </Routes>
+      <Footer />
     </>
   )
 }

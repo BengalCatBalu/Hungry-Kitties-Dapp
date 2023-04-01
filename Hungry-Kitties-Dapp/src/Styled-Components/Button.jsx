@@ -6,13 +6,15 @@ const Button = styled.button`
     background-color: ${props => props.bgcolor || null};
     width: ${props => props.width || null};
     color: ${props => props.color || null};
+    margin: ${props => props.margin || null};
     //outline: none;
-    border: ${props => props.border || null};
+    border: ${props => props.border || "0px"};
     white-space: nowrap;
     font-size: ${props => props.fsize || '2vw'};
     justify-items: center;
     align-items: center;
-    padding: 0.9rem 2.5rem;
+    text-align: center;
+    padding: 0.9rem 0.5rem;
     border-radius: 50px;
     cursor:pointer;
     position: relative;
