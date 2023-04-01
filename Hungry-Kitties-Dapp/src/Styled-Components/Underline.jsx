@@ -16,7 +16,7 @@ const Underline = styled.span`
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px;
+    height: 0.25vh;
     width: 0;
     background-color: #000;
     transition: all 0.2s ease-in-out;

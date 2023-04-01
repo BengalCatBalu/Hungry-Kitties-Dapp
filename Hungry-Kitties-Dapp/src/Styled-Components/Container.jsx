@@ -18,6 +18,7 @@ const Container = styled.div`
   border-radius: ${props => props.borderRadius ? props.borderRadius : '0'};
   border: ${props => props.border ? props.border : 'none'};
   border-color: ${props => props.borderColor ? props.borderColor : 'none'};
+  box-shadow: ${props => props.box_shadow ? props.box_shadow : null}
 `;
 
 export default Container;
