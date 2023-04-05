@@ -12,7 +12,6 @@ import Footer from './Components/Footer/Footer';
 import GlobalStyles from './GlobalStyles';
 import CollectionPage from './Pages/Collections/CollectionOnePage/OneCollectionPage';
 
-
 function App() {
   return (
     <>

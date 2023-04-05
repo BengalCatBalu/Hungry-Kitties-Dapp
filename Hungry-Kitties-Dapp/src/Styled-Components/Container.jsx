@@ -3,7 +3,6 @@ import { COLOR_BLACK } from '../Constants';
 
 const Container = styled.div`
   width: ${props => props.width ? props.width : '100%'};
-  height: ${props => props.height ? props.height : '100%'};
   max-height: ${props => props.mxheight ? props.mxheight : '100%'};
   max-width: ${props => props.maxWidth ? props.maxWidth : '100%'};
   padding: ${props => props.padding ? props.padding : '0'};
