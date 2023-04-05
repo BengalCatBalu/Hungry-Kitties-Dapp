@@ -27,9 +27,9 @@ exports.getCollection = async (req, res) => {
 
 // POST a new collection
 exports.createCollection = async (req, res) => {
-    const { name, description, image, totalRaised } = req.body
+    const { name, description, image, totalRaised, nfts } = req.body
     try {
-        const collection = await Collection.create({ name, description, image, totalRaised })
+        const collection = await Collection.create({ name, description, image, totalRaised, nfts})
         res.status(201).json(collection)
     } catch (error) {
         res.status(400).json({ msg: error.message })

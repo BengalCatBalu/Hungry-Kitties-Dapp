@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const collectionRoutes = require('./routes/collections')
+const nftRoutes = require('./routes/nfts')
 
 // express app
 const app = express()
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/collections', collectionRoutes)
+app.use('/api/nfts', nftRoutes)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
@@ -27,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
             if (err) {
                 return console.log(err)
             }
-            console.log("Server Ok!! with Port" + process.env.PORT);
+            console.log("Server Ok!! with Port " + process.env.PORT);
         })
     })
     .catch(err => console.log(err))

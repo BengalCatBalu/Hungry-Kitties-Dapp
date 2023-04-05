@@ -1,10 +1,19 @@
 const mongoose = require('mongoose');
 
+// Define the schema
 const nftSchema = new mongoose.Schema({
-    number: { type: Number, required: true },
-    collectionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Collection' },
-});
+    number: {
+        type: Number,
+        required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+  });
 
+// Create the model
 const NFT = mongoose.model('NFT', nftSchema);
 
-module.exports = NFT;
+// Export the model
+module.exports = NFT

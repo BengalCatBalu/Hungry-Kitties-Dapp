@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
+const NFT = require('./nft')
+
 const collectionSchema = new Schema({
     name: {
         type: String,
@@ -25,7 +27,7 @@ const collectionSchema = new Schema({
         required: true,
         default: Date.now
     },
-    //nfts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'NFT' }],
+    nfts: [NFT.schema],
 }, { timestamps: true })
 
 const Collection = mongoose.model('Collection', collectionSchema);

@@ -10,7 +10,7 @@ import Account from './Pages/Account/Account';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 import GlobalStyles from './GlobalStyles';
-import CollectionPage from './Pages/Collections/CollectionOnePage/CollectionOnePage';
+import CollectionPage from './Pages/Collections/CollectionOnePage/OneCollectionPage';
 
 
 function App() {
