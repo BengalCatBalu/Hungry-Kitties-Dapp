@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Section from '../../Styled-Components/Section';
 import Text from '../../Styled-Components/Text';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function Collections() {
@@ -24,9 +25,11 @@ function Collections() {
             </h1>
             {collections && collections.map((collection) => (
                 <Section color = "white">
-                    <h1>
-                        {collection.name}
-                    </h1>
+                    <Link to = {`/collections/${collection._id}`}>
+                        <Text>
+                            {collection.name}
+                        </Text>
+                    </Link>
                 </Section>
             ))}
         </div>

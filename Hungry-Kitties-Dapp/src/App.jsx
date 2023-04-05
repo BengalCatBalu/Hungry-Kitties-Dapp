@@ -10,16 +10,18 @@ import Account from './Pages/Account/Account';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 import GlobalStyles from './GlobalStyles';
+import CollectionPage from './Pages/Collections/CollectionOnePage/CollectionOnePage';
 
 
 function App() {
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles />
       <NavBar />
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/collections' element={<Collections />} />
+        <Route path='/collections/:id' element={<CollectionPage />} />
         <Route path='/account' element={<Account />} />
       </Routes>
       <Footer />
