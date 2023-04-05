@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Underline from "../../../Styled-Components/Underline";
+import { Link } from "react-router-dom";
 
 const Menu = styled.div`
   display: flex;
@@ -71,7 +72,7 @@ const Collection = () => {
     <div>
       <Menu>
         <MenuItem>
-          Collection
+          <a href = "/collections">Collection</a>
           <MenuContent className="menu-content">
             <MenuLink>
                 <Underline>
