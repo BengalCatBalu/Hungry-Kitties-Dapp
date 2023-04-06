@@ -15,6 +15,7 @@ const MenuItem = styled.div`
 
   &:hover ul {
     display: block;
+    margin-top: 1vh;
   }
 `;
 
@@ -32,7 +33,7 @@ const MenuContent = styled.ul`
 `;
 
 const MenuLink = styled.li`
-  padding: 1.5vh 1.5vw;
+  padding: 1.2vh 1.5vw;
   font-size: 2.5vh;
   color: black;
 `;

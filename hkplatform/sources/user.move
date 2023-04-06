@@ -18,16 +18,13 @@ module hkplatform::user {
     struct User has key, store, copy {
         id: UID,
         number_of_donations: u64,
-        name: string::String,
         number_of_HungryKitties: u64,
-        user_address: address,
-        balance: Balance<SUI>,
+        user_address: address
     }
 
     //========== Events ===========
 
     struct UserCreated has drop, copy {
-        name: string::String,
     }
 
     struct NewDonation has copy, drop {
@@ -39,10 +36,6 @@ module hkplatform::user {
 
     public fun number_of_donations(self: &User) : u64 {
         self.number_of_donations
-    }
-
-    public fun name(self: &User) : &string::String {
-        &self.name
     }
 
     public fun number_of_HungryKitties(self: &User) : u64 {
@@ -59,28 +52,23 @@ module hkplatform::user {
 
     //========== Constructor ===========
 
-    public fun new(name: vector<u8>, ctx: &mut TxContext) : User {
+    public fun new(ctx: &mut TxContext) : User {
         User{
             id: object::new(ctx),
             number_of_donations: 0,
-            name: string::utf8(name),
             number_of_HungryKitties: 0,
             user_address: tx_context::sender(ctx),
             balance: balance::zero(),
         }
     }
 
-    public entry fun create(name: vector<u8>, ctx: &mut TxContext) {
-        let donator = new(name, ctx);
-        emit(UserCreated {name:string::utf8(name)});
+    public entry fun create(ctx: &mut TxContext) {
+        let donator = new(ctx);
+        emit(UserCreated {});
         transfer::transfer(donator, tx_context::sender(ctx))
     }
 
     //========== User Functions ===========
-
-    public entry fun change_name(new_name: vector<u8>, self: &mut User) {
-        self.name = string::utf8(new_name);
-    }
 
     public entry fun inc_number_of_donations(self: &mut User) {
         self.number_of_donations = self.number_of_donations + 1;

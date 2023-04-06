@@ -12,8 +12,8 @@ import CollectionDescription from './CollectionDescription';
 
 function CollectionPage() {
     return (
-        <Section bgcolor = {COLOR_BLACK} txtcolor = {COLOR_WHITE} min_height = "80vh" width = "100%">
-            <Container height = "100%" gap = "0">
+        <Section bgcolor = "green" txtcolor = {COLOR_WHITE} min_height = "80vh" width = "100%">
+            <Container height = "100%" gap = "0" margin = "0 0">
                 <CollectionDescription/>
                 <Image src = {"https://harlequin-written-whippet-307.mypinata.cloud/ipfs/QmWLVtPn9x15TJ5ouqzyBNNQhws2vBCnN26GXxc8wvNagd/img-5133.webp"} width = "50%"/>
             </Container>

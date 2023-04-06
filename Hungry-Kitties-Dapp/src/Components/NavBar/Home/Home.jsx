@@ -4,7 +4,7 @@ import Underline from "../../../Styled-Components/Underline";
 
 const Menu = styled.div`
   display: flex;
-  align-items: center;
+  align-items: "left";
 `;
 
 const MenuItem = styled.div`
@@ -15,14 +15,15 @@ const MenuItem = styled.div`
 
   &:hover ul {
     display: block;
+    margin-top: 1vh;
   }
 `;
 
 const MenuContent = styled.ul`
   display: none;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: "0 0";
+  padding: "1rem 0";
   position: absolute;
 
 
@@ -32,7 +33,7 @@ const MenuContent = styled.ul`
 `;
 
 const MenuLink = styled.li`
-  padding: 1.5vh 1.5vw;
+  padding: 1.2vh 1.5vw;
   font-size: 2.5vh;
   color: black;
 `;
@@ -71,7 +72,7 @@ const Home = () => {
     <div>
       <Menu>
         <MenuItem>
-          Home
+            <a href = "/">Home</a>
           <MenuContent className="menu-content">
                 <MenuLink>
                     <Underline>

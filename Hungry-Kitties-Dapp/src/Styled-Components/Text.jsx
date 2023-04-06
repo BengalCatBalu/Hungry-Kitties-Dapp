@@ -5,6 +5,7 @@ const Text = styled.h1`
   color: ${props => props.color || null};
   text-align: ${props => props.align || `center`};
   margin: ${props => props.margin || '0'};
+  margin-left: ${props => props.margin_left || null};
   opacity: ${props => props.opacity || null};
   white-space: ${props => props.white_space || `pre-line`};
   font-weight: ${props => props.font_weight || `normal`};

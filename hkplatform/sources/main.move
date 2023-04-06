@@ -38,12 +38,6 @@ module hkplatform::DonationCollection {
         donated: u64,
     }
 
-    fun init(ctx: &mut TxContext) {
-        transfer::transfer(
-            Admin {id: object::new(ctx)}
-        , tx_context::sender(ctx))
-    }
-
     public entry fun createCollection(_admin: &Admin, supply_: u64, name_:vector<u8>, description_: vector<u8>, owner_: address, ctx: &mut TxContext) {
         transfer::share_object(DonationCollection { id: object::new(ctx),
             supply: supply_,
