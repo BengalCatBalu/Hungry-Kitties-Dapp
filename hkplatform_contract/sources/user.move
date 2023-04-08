@@ -15,10 +15,11 @@ module hkplatform::user {
 
     // Structs
 
-    struct User has key, store, copy {
+    struct User has key, store {
         id: UID,
         number_of_donations: u64,
         number_of_HungryKitties: u64,
+        extra_points: u64,
         user_address: address
     }
 
@@ -46,8 +47,16 @@ module hkplatform::user {
         self.user_address
     }
 
-    public fun balance(self: &mut User) : &mut Balance<SUI> {
-        &mut self.balance
+    public fun get_number_of_donations(self: &User) : u64 {
+        self.number_of_donations
+    }
+
+    public fun get_number_of_HungryKitties(self: &User) : u64 {
+        self.number_of_HungryKitties
+    }
+
+    public fun get_extra_points(self: &User) : u64 {
+        self.extra_points
     }
 
     //========== Constructor ===========
@@ -57,8 +66,8 @@ module hkplatform::user {
             id: object::new(ctx),
             number_of_donations: 0,
             number_of_HungryKitties: 0,
+            extra_points: 0,
             user_address: tx_context::sender(ctx),
-            balance: balance::zero(),
         }
     }
 
@@ -82,11 +91,12 @@ module hkplatform::user {
         //emit(NewDonation{from_address: self.owner, to_address: to_address});
         self.number_of_donations = self.number_of_donations + 1;
     }
-
+    /*
     public entry fun collect_profit(self: &mut User, ctx: &mut TxContext) {
         let amount = balance::value(&self.balance);
         let profits = coin::take(&mut self.balance, amount, ctx);
 
         transfer::transfer(profits, tx_context::sender(ctx))
     }
+    */
 }

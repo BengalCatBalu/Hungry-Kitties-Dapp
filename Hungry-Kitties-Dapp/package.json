@@ -12,6 +12,7 @@
   "dependencies": {
     "@mysten/sui.js": "^0.28.0",
     "@originbyte/js-sdk": "^0.20.21",
+    "@szhsin/react-menu": "github:szhsin/react-menu",
     "airtable": "^0.11.6",
     "axios": "^1.3.4",
     "chart.js": "^4.2.1",

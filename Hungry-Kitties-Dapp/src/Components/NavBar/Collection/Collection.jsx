@@ -15,7 +15,6 @@ const MenuItem = styled.div`
 
   &:hover ul {
     display: block;
-    margin-top: 1vh;
   }
 `;
 

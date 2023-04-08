@@ -1,6 +1,6 @@
 //used as a profile of the person who donates through the platform, this structure collects donation statistics
 //minted once during user registration
-module hkplatform::lottery {
+module hkplatform::pool {
     use sui::object::{Self, UID};
     use sui::tx_context::{Self, TxContext};
     use sui::coin::{Self, Coin};
@@ -17,7 +17,7 @@ module hkplatform::lottery {
     // Structs
 
     //Lottery Profile
-    struct Lottery has key {
+    struct Pool has key {
         id: UID,
         balance: Balance<SUI>,
         participants: vector<User>,

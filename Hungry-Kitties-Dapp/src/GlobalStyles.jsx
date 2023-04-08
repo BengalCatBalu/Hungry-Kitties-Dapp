@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { COLOR_BLACK } from './Constants';
+import image from './assets/background.png';
  
 const GlobalStyles = createGlobalStyle`
   *,*::before,*::after{
@@ -19,6 +20,10 @@ const GlobalStyles = createGlobalStyle`
   a{
     color:inherit;
     text-decoration:none;
+  }
+  
+  .preloader {
+    background-color: ${COLOR_BLACK};
   }
 `;
  

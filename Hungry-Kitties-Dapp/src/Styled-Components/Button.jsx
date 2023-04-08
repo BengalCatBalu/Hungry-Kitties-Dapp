@@ -7,6 +7,8 @@ const Button = styled.button`
     width: ${props => props.width || null};
     color: ${props => props.color || null};
     margin: ${props => props.margin || null};
+    margin-top: ${props => props.margin_top || null};
+    margin-left: ${props => props.margin_left || null};
     //outline: none;
     border: ${props => props.border || "0px"};
     white-space: nowrap;

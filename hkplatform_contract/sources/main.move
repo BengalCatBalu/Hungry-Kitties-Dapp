@@ -13,6 +13,7 @@ module hkplatform::DonationCollection {
     use sui::transfer;
     use hkplatform::user::{Self, User};
     use hkplatform::admin::{Self, Admin};
+    use hkplatform::pool::{Self, Pool};
 
     const ETooManyNfts: u64 = 0;
     const EInsufficientBalance: u64 = 0;
@@ -27,6 +28,7 @@ module hkplatform::DonationCollection {
         description: String,
         // With this link we will receive images of nft
         ipfs_folder_url: vector<u8>,
+        // address of shelter, in future may be will integrate name service
         owner: address,
         // Addresses that donated
         //addresses: vector<address>;
@@ -39,7 +41,10 @@ module hkplatform::DonationCollection {
     }
 
     public entry fun createCollection(_admin: &Admin, supply_: u64, name_:vector<u8>, description_: vector<u8>, owner_: address, ctx: &mut TxContext) {
-        transfer::share_object(DonationCollection { id: object::new(ctx),
+        
+        // make collection shared object
+        transfer::share_object(DonationCollection { 
+            id: object::new(ctx),
             supply: supply_,
             created: 0,
             name: string::utf8(name_),
@@ -61,15 +66,17 @@ module hkplatform::DonationCollection {
     */
 
     public entry fun buy_nft(cap: &mut DonationCollection, payment: &mut Coin<SUI>, paymentValue: u64, user: &mut User, ctx: &mut TxContext) {
-        assert!(cap.created <= cap.supply - 1, ETooManyNfts);
+        assert!(cap.created < cap.supply, ETooManyNfts);
         cap.created = cap.created + 1;
         let val = coin::value(payment);
         assert!(val >= paymentValue, EInsufficientBalance);
         user::inc_number_of_donations(user);
+        // transfer funds to shelter
+        let shelter_profits = coin::split(payment, paymentValue * 9 / 10, ctx);
+        let pool_profits = coin::split(payment, paymentValue / 10, ctx);
+        transfer::public_transfer(shelter_profits, cap.owner);
 
-        let profits = coin::split(payment, paymentValue, ctx);
-        transfer::public_transfer(profits, cap.owner);
-
+        // transfer nft to buyer
         transfer::transfer(NFT {
             id: object::new(ctx),
             url: returnImageUrl(cap.ipfs_folder_url, cap.created),
@@ -83,6 +90,7 @@ module hkplatform::DonationCollection {
     // ===== Utilities ======
 
     fun returnImageUrl(ipfsUrl: vector<u8>, _number: u64) : Url {
+        // need to make string from number creator
         vector::append(&mut ipfsUrl, b"1");
         vector::append(&mut ipfsUrl, b".png");
 

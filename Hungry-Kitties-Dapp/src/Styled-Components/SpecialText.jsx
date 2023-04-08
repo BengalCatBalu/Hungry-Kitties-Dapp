@@ -5,6 +5,7 @@ const SpecialText = styled.p`
   color: ${props => props.color || null};
   text-align: ${props => props.align || null};
   margin: ${props => props.margin || '0'};
+  margin-left: ${props => props.margin_left || null};
   text-shadow: ${props => props.margin || '0'}; 
   -webkit-text-stroke: ${props => props.stroke || null}; 
   //text-stroke: ${({ stroke = 'none' }) => stroke}; 

@@ -12,15 +12,21 @@ import Profile from './Profile/Profile'
 const NavBar = () => {
   return (
     <Section
-      max_height="15vh"
-      bgcolor={COLOR_BLACK}
-      txtcolor={COLOR_ORANGE}
+      max_height="12vh"
+      txtcolor={COLOR_WHITE}
+      bgcolor = {COLOR_BLACK}
       size_text="1.5vw"
       weight_text="bold"
+      width = "90%"
+      margin_left = "5%"
+      margin_top = "3vh"
+      borderRadius = "50px"
     >
       <Container
-        gap="15vw"
+        gap="12vw"
         margin = "0"
+        bgcolor={COLOR_ORANGE}
+        borderRadius = "50px"
       >
         <Logo />
         <Home />

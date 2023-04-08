@@ -4,6 +4,7 @@ import Section from '../../Styled-Components/Section';
 import Text from '../../Styled-Components/Text';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import TitlePart from './TitlePart/TitlePart';
 
 
 function Collections() {
@@ -20,9 +21,7 @@ function Collections() {
 
     return (
         <div>
-            <h1>
-                Collections
-            </h1>
+            <TitlePart/>
             {collections && collections.map((collection) => (
                 <Section color = "white">
                     <Link to = {`/collections/${collection._id}`}>

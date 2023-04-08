@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Logo = () => {
   return (
       <Image src={LogoImage}
-        width="8%">
+        width="15%">
       </Image>
   )
 }

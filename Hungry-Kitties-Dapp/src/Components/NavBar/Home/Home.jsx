@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Underline from "../../../Styled-Components/Underline";
+import Button from "../../../Styled-Components/Button";
 
 const Menu = styled.div`
   display: flex;
@@ -15,15 +16,14 @@ const MenuItem = styled.div`
 
   &:hover ul {
     display: block;
-    margin-top: 1vh;
   }
 `;
 
 const MenuContent = styled.ul`
   display: none;
   list-style: none;
-  margin: "0 0";
-  padding: "1rem 0";
+  margin: 0;
+  paddint: 0;
   position: absolute;
 
 
@@ -72,7 +72,11 @@ const Home = () => {
     <div>
       <Menu>
         <MenuItem>
-            <a href = "/">Home</a>
+            <a href = "/">
+              <Button width = "10vw">
+                Home
+              </Button>
+            </a>
           <MenuContent className="menu-content">
                 <MenuLink>
                     <Underline>
