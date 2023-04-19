@@ -84,12 +84,28 @@ module hkplatform::user {
     }
 
     public entry fun change_number_of_Hungry_Kitties(new_counter: u64, self: &mut User) {
-        self.number_of_HungryKitties = new_counter;
+        if (new_counter > 10) {
+            self.number_of_HungryKitties = 10;
+        } else {
+            self.number_of_HungryKitties = new_counter;
+        }
+    }
+
+    public entry fun change_number_of_Extra_Points(new_counter: u64, self: &mut User) {
+        if (new_counter > 10) {
+            self.extra_points = 10;
+        } else {
+            self.extra_points = new_counter;
+        }
     }
 
     public entry fun make_donation(self: &mut User, _to_address: address) {
         //emit(NewDonation{from_address: self.owner, to_address: to_address});
         self.number_of_donations = self.number_of_donations + 1;
+    }
+
+    public fun count_points(self: &User) : u64 {
+        self.number_of_donations * 10 + self.number_of_HungryKitties * 5 + self.extra_points * 2
     }
     /*
     public entry fun collect_profit(self: &mut User, ctx: &mut TxContext) {

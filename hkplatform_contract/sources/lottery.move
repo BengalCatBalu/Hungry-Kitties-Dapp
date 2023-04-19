@@ -24,7 +24,7 @@ module hkplatform::pool {
     }
 
     fun init(ctx: &mut TxContext) {
-        transfer::transfer(Lottery {
+        transfer::transfer(Pool {
             id: object::new(ctx),
             balance: balance::zero(),
             participants: vector::empty(),
@@ -34,14 +34,14 @@ module hkplatform::pool {
     // pay functions
 
     // Add funds to Lottery Balance
-    public fun pay(self: &mut Lottery, payment: &mut Coin<SUI>) {
+    public fun addFunds(self: &mut Pool, payment: &mut Coin<SUI>) {
         let coin_balance = coin::balance_mut(payment);
         let paid = balance::withdraw_all(coin_balance);
         balance::join(&mut self.balance, paid);
     }
 
     // Pay winner all funds from Lottery Balance
-    public fun payToWinner(self: &mut Lottery, winner: &mut User) {
+    public fun payToWinner(self: &mut Pool, winner: &mut User) {
         balance::join(user::balance(winner), balance::withdraw_all(&mut self.balance));
     }
 
