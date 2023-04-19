@@ -6,11 +6,9 @@ const Navigation = () => {
         <div className="header">
              <div className="header__container">
                 <div className="header__block">
-                    <NavLink to="/">
-                    <div className="header__icon icon__header">
+                    <NavLink className="header__icon icon__header" to="/">
                         <img src={icon} alt="" className="icon__img" />  
                         <div className="icon__title">Hungry Kitties</div>
-                    </div>   
                     </NavLink>
                     
                     <nav className="header__navigation navigation__header">
