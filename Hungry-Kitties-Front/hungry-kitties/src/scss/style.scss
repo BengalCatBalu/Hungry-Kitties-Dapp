@@ -1,0 +1,275 @@
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 500px, $upper-range:1640px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+    
+    @media screen and (max-width: $lower-range) {
+      font-size: $min-font-size;
+    }
+    @media screen and (min-width: $upper-range){
+      font-size: $max-font-size;
+    }
+  }
+  
+
+// https://codepen.io/dbox/pen/meaMba
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	// outline: none;
+}
+a:focus,
+a:active {
+	// outline: none;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1;
+	font-family: Arial, Helvetica, sans-serif;
+	//text-rendering: optimizeLegibility;
+/* 	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #1E1E1E;
+    height: 2000px;
+}
+input,
+button,
+textarea {
+	font-size: inherit;
+}
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+}
+a {
+	color: inherit;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+[class*="__container"] {
+	max-width: 1660px;
+    width: 100%;
+	margin: 0px auto;
+    padding: 0 10px;
+}
+
+
+
+.profile {
+	color: white;
+	padding-top: 60px;
+	// .profile__container
+
+	&__container {
+		display: flex;
+		column-gap: 110px;
+		@media (max-width:1200px) {
+			flex-direction: column;
+			gap: 47px;
+			align-items: center;
+		}
+	}
+
+	// .profile__card
+
+	&__card {
+	}
+
+	// .profile__charity
+
+	&__charity {
+	}
+}
+.card {
+
+	// .card__profile
+
+	&__profile {
+	}
+
+	// .card__body
+
+	&__body {	
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: url(../img/profilebg.png)0 0/101% 101% #DD6B20 ;
+		border-radius: 50px;
+		padding: 45px 32px;
+		row-gap: 63px;
+		@media (max-width:550px){
+			padding: 22px 16px;
+		}
+	}
+
+	// .card__avatar
+
+	&__avatar {	
+		border-radius: 50px;
+		background-color: #1A1A1A;
+		max-width: 456px;
+		max-height: 456px;
+		width: 100%;
+		height: 100%;
+		@media (max-width:1200px){
+			max-width: 304px;
+			max-height: 304px;
+		}
+	}
+
+	// .card__wallet-address
+
+	&__wallet-address {
+		@include fluid-type(18px, 40px);
+
+	}
+
+	// .card__scan
+
+	&__scan {
+		cursor: pointer;
+		padding: 17px 161px;
+		background: white;
+		color: black;
+		border-radius: 50px;
+		font-size: 40px;
+		@include fluid-type(18px, 40px);
+		@media (max-width:550px){
+			padding: 17px 130px;
+		}
+	}
+}
+
+.profile {
+
+	// .profile__charity
+
+	&__charity {
+		
+	}
+}
+
+.profile {
+
+	// .profile__charity
+
+	&__charity {
+	}
+}
+.charity {
+
+	// .charity__profile
+
+	&__profile {
+		background-color: #272727;
+		border-radius: 50px;
+		padding: 39px 76px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		justify-content: space-between;
+		@media (max-width:550px){
+			padding: 20px 38px;
+		}
+	}
+
+	// .charity__donated
+
+	&__donated {
+		/* font-size: 150px; */
+		font-weight: 400;
+		@include fluid-type(40px, 150px);
+	}
+
+	// .charity__text1
+
+	&__text {
+		@include fluid-type(15px, 33px);
+		color: #DD6B20;
+		margin-bottom: 10px;
+	}
+
+	// .charity__under-text
+
+	&__under-text {
+		@include fluid-type(15px, 33px);
+	}
+
+	// .charity__line
+
+	&__line {
+		height: 11px;
+		max-width: 839px;
+		width: 100%;
+		background-color: #DD6B20;
+		border-radius: 50px;
+		margin: 39px 0;
+		@media (max-width:700px){
+			height: 7px;
+			margin: 20px 0;
+		}
+	}
+
+	// .charity__points
+
+	&__points {
+		/* font-size: 150px; */
+		@include fluid-type(40px, 150px);
+	}
+
+	// .charity__discription
+
+	&__discription {
+		text-align: left;
+		letter-spacing: 0.045em;
+		max-width: 839px;
+		line-height: 38px;
+		@include fluid-type(15px, 33px);
+		@media (max-width:925px){
+			line-height: normal;
+		}
+	}
+}
+
