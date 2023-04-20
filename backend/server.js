@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const collectionRoutes = require('./routes/collections')
 const nftRoutes = require('./routes/nfts')
+const userRoutes = require('./routes/users')
 
 // express app
 const app = express()
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/collections', collectionRoutes)
 app.use('/api/nfts', nftRoutes)
+app.use('/api/users', userRoutes)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
