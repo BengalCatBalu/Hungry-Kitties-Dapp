@@ -1,0 +1,191 @@
+.profile {
+    color: white;
+    padding-top: 60px;
+  }
+  .profile__container {
+    display: flex;
+    -moz-column-gap: 110px;
+         column-gap: 110px;
+  }
+  @media (max-width: 1200px) {
+    .profile__container {
+      flex-direction: column;
+      gap: 47px;
+      align-items: center;
+    }
+  }
+  .card__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../img/profilebg.png) 0 0/101% 101% #DD6B20;
+    border-radius: 50px;
+    padding: 45px 32px;
+    row-gap: 63px;
+  }
+  @media (max-width: 550px) {
+    .card__body {
+      padding: 22px 16px;
+    }
+  }
+  .card__avatar {
+    border-radius: 50px;
+    background-color: #1A1A1A;
+    max-width: 456px;
+    max-height: 456px;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 1200px) {
+    .card__avatar {
+      max-width: 304px;
+      max-height: 304px;
+    }
+  }
+  .card__wallet-address {
+    font-size: calc(18px + 22 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .card__wallet-address {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .card__wallet-address {
+      font-size: 40px;
+    }
+  }
+  .card__scan {
+    cursor: pointer;
+    padding: 17px 161px;
+    background: white;
+    color: black;
+    border-radius: 50px;
+    font-size: 40px;
+    font-size: calc(18px + 22 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .card__scan {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .card__scan {
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 550px) {
+    .card__scan {
+      padding: 17px 130px;
+    }
+  }
+  
+  .charity__profile {
+    background-color: #272727;
+    border-radius: 50px;
+    padding: 39px 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 550px) {
+    .charity__profile {
+      padding: 20px 38px;
+    }
+  }
+  .charity__donated {
+    /* font-size: 150px; */
+    font-weight: 400;
+    font-size: calc(40px + 110 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .charity__donated {
+      font-size: 40px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .charity__donated {
+      font-size: 150px;
+    }
+  }
+  .charity__text {
+    font-size: calc(15px + 18 * ( (100vw - 500px) / 1140));
+    color: #DD6B20;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    .charity__text {
+      font-size: 15px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .charity__text {
+      font-size: 33px;
+    }
+  }
+  .charity__under-text {
+    font-size: calc(15px + 18 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .charity__under-text {
+      font-size: 15px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .charity__under-text {
+      font-size: 33px;
+    }
+  }
+  .charity__line {
+    height: 11px;
+    max-width: 839px;
+    width: 100%;
+    background-color: #DD6B20;
+    border-radius: 50px;
+    margin: 39px 0;
+  }
+  @media (max-width: 700px) {
+    .charity__line {
+      height: 7px;
+      margin: 20px 0;
+    }
+  }
+  .charity__points {
+    /* font-size: 150px; */
+    font-size: calc(40px + 110 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .charity__points {
+      font-size: 40px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .charity__points {
+      font-size: 150px;
+    }
+  }
+  .charity__discription {
+    text-align: left;
+    letter-spacing: 0.045em;
+    max-width: 839px;
+    line-height: 38px;
+    font-size: calc(15px + 18 * ( (100vw - 500px) / 1140));
+  }
+  @media screen and (max-width: 500px) {
+    .charity__discription {
+      font-size: 15px;
+    }
+  }
+  @media screen and (min-width: 1640px) {
+    .charity__discription {
+      font-size: 33px;
+    }
+  }
+  @media (max-width: 925px) {
+    .charity__discription {
+      line-height: normal;
+    }
+  }
