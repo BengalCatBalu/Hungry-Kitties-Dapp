@@ -2,18 +2,14 @@ import './style.css'
 import React, { useState } from 'react';
 import icon from '../../img/icon.png'
 import { NavLink } from 'react-router-dom';
-
 import { ethos, EthosConnectStatus, SignInButton  } from 'ethos-connect'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { slide as Menu } from 'react-burger-menu'
+
 
 const Navigation = () => {
     const { wallet } = ethos.useWallet()
     const { status } = ethos.useWallet()
-
-const Navigation = () => {
-    
     return (
         <div className="header">
             <ToastContainer />
@@ -23,14 +19,6 @@ const Navigation = () => {
                         <img src={icon} alt="" className="icon__img" />
                         <div className="icon__title">Hungry Kitties</div>
                     </NavLink>
-
-
-                    <Menu>
-                        <a id="home" className="menu-item" href="/">Home</a>
-                        <a id="about" className="menu-item" href="/about">About</a>
-                        <a id="contact" className="menu-item" href="/contact">Contact</a>
-                    </Menu>
-                    
 
                     <nav className="header__navigation navigation__header">
                         <ul className="navigation__items">
@@ -72,7 +60,6 @@ const Navigation = () => {
 
 
     );
-    }
 }
 
 export default Navigation;

@@ -39,7 +39,6 @@
   white-space: wrap;
   text-align: center;
   line-height: 120%;
-  z-index: 2;
   /* text-shadow: -3px -3px 0 #DD6B20, 3px -3px 0 #DD6B20, -3px 3px 0 #DD6B20, 3px 3px 0 #DD6B20; */
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: #DD6B20;
@@ -71,7 +70,6 @@
   text-align: center;
   max-width: 666px;
   line-height: 150%;
-  
 }
 @media screen and (max-width: 700px) {
   .title__text {

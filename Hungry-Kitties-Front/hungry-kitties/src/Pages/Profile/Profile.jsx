@@ -1,7 +1,6 @@
 
-import './style.css'
+import '../../css/style.css'
 import avatar from  '../../img/avatar.webp'
-
 
 const Profile = () => {
 
