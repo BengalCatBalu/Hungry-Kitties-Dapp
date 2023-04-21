@@ -1,5 +1,6 @@
 //used as a profile of the person who donates through the platform, this structure collects donation statistics
 //minted once during user registration
+/*
 module hkplatform::pool {
     use sui::object::{Self, UID};
     use sui::tx_context::{Self, TxContext};
@@ -57,3 +58,4 @@ module hkplatform::pool {
         return vector::borrow_mut(&mut self.participants, 0)
     }
 }
+*/

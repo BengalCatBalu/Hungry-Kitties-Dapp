@@ -36,7 +36,7 @@ const Profile = () => {
     if (notRegister) {
         return (
             <div>
-                <h1>Not register</h1>
+                <h1>Not register + {wallet?.address}</h1>
             </div>
         )
     }
