@@ -1,5 +1,5 @@
 
-import '../../css/style.css'
+import './profile.css'
 import avatar from '../../img/avatar.webp'
 import { ethos } from 'ethos-connect'
 import React, { useState, useEffect, Component } from 'react'
@@ -38,7 +38,7 @@ const Profile = () => {
             <div>
                 <h1>Not register + {wallet?.address}</h1>
             </div>
-        )
+        ) 
     }
 
     return (

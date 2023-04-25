@@ -1,4 +1,4 @@
-import './style.css'
+import './navigation.css'
 import React, { useState } from 'react';
 import icon from '../../img/icon.png'
 import { NavLink } from 'react-router-dom';
@@ -23,7 +23,7 @@ const Navigation = () => {
                     <nav className="header__navigation navigation__header">
                         <ul className="navigation__items">
                             <NavLink to='/profile'><li className="navigation__item">Profile</li></NavLink>
-                            <li className="navigation__item">Explore</li>
+                            <NavLink to='/explore'><li className="navigation__item">Explore</li></NavLink> 
                             <li className="navigation__item">Our Media</li>
                         </ul>
                     </nav>
