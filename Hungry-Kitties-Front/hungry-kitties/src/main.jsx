@@ -6,8 +6,7 @@ import { EthosConnectProvider } from 'ethos-connect';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <EthosConnectProvider
-    >
+    <EthosConnectProvider>
       <App />
     </EthosConnectProvider>
   </React.StrictMode>,

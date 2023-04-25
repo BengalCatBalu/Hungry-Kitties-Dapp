@@ -4,6 +4,7 @@ import avatar from '../../img/avatar.webp'
 import { ethos } from 'ethos-connect'
 import React, { useState, useEffect, Component } from 'react'
 import getUserInfo from '../../utility_functions/server/userApiRequest'
+import NotRegister from './NotRegister/NotRegister'
 
 const Profile = () => {
     const { wallet } = ethos.useWallet();
@@ -35,9 +36,7 @@ const Profile = () => {
 
     if (notRegister) {
         return (
-            <div>
-                <h1>Not register + {wallet?.address}</h1>
-            </div>
+            <NotRegister/>
         )
     }
 
