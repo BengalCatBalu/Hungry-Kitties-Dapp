@@ -14,7 +14,6 @@ const Explore = () => {
                     <Shelter></Shelter>
                     <Shelter></Shelter>
                     <Shelter></Shelter>
-                    <Shelter></Shelter>
                </div>
           </div>
      </div>
