@@ -1,6 +1,30 @@
 import './shelterpage.css'
 import shelterImage from '../../img/shelter1.webp'
+import getCollectionInfo from '../../utility_functions/server/collectionApiRequest';
+import React, { useState, useEffect } from 'react'
+
+
 const ShelterPage = () => {
+    const [shelter, setShelter] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const { id } = useParams();
+                const data = await getCollectionInfo(id);
+                if (data == null) {
+                    setNotRegister(true);
+                    return;
+                }
+                setUser(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData();
+    }, []);
+
+
     return ( 
         <>
         <div className="shelter">

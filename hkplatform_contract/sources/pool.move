@@ -9,7 +9,6 @@ module hkplatform::pool {
     //use sui::event::emit;
     use std::vector;
     use sui::transfer;
-    use hkplatform::user::{Self, User};
     use hkplatform::admin::{Self, Admin};
     //use hkplatform::admin::{Self, Admin};
     // Constants
