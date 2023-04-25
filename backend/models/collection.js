@@ -13,21 +13,36 @@ const collectionSchema = new Schema({
         type: String,
         required: true
     },
+    // главное изображение коллекции
     image: {
         type: String,
         required: true
     },
+
+    additional_images: [String],
     totalRaised: {
         type: Number,
         required: true,
         default: 0
     },
-    created: {
-        type: Date,
+    supply: {
+        type: Number,
         required: true,
-        default: Date.now
+    },
+    shelter_address: {
+        type: String,
+        required: true,
+    },
+    collection_object_id: {
+        type:String,
+        required: true
+    },
+    ipfs_url: {
+        type: String, 
+        required: true,
     },
     nfts: [NFT.schema],
+
 }, { timestamps: true })
 
 const Collection = mongoose.model('Collection', collectionSchema);
