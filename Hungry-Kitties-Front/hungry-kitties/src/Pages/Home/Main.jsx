@@ -1,14 +1,14 @@
 
-import './style.css'
+import './main.css'
 import icon from '../../img/icon1.svg'
 
 
 const Home = () => {
     return ( 
       <>
-        <div className="home">
+        <div  className="home">
             <div className="home__container">
-                <div className="home__title title__home">
+                <div   className="home__title title__home">
                     <h1 className="title__header">KIFT PLATFORM</h1>
                     <h2 className="title__text">Transforming digital art into tangible impact with Hungry Kitties charitable NFTs.</h2>
                 </div>

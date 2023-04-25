@@ -1,0 +1,124 @@
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 500px, $upper-range:1640px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+    
+    @media screen and (max-width: $lower-range) {
+      font-size: $min-font-size;
+    }
+    @media screen and (min-width: $upper-range){
+      font-size: $max-font-size;
+    }
+  }
+  
+  /* https://codepen.io/dbox/pen/meaMba */
+
+
+.explore {
+    
+    // .explore__container-small
+
+    &__container-small {
+        padding-top: 94px;
+    }
+
+    // .explore__content
+
+    &__content {
+        color: white;
+        padding-top: 94px;  
+    }
+
+    // .explore__title
+
+    &__title {
+        @include fluid-type(30px, 69px);
+        text-align: center;
+    }
+
+    // .explore__items
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        @media (max-width:1100px) {
+            flex-direction: column;
+            align-items: center;
+
+        }
+    }
+}
+.items {
+
+    // .items__explore
+
+    &__explore {
+        padding-top: 94px;
+    }
+
+    // .items__body
+
+    &__body {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #272727;
+        border-radius: 50px;
+        flex: 1 1 50%;
+        margin: 0 -10px;
+        margin: 0 20px;
+        @media (max-width:500px) {
+            max-width: 350px;
+        }
+    }
+
+    // .items__img
+
+    &__img {
+        width: 100%;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    // .items__footer
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 50px 46px 50px;
+        
+        height: 100%;
+        gap: 30px;
+    }
+
+    // .items__text
+
+    &__text {
+        @include fluid-type(15px, 22px);
+        line-height: 161.99%;
+        text-align: center;
+        margin-bottom: auto;
+    }
+
+    // .items__btn
+
+    &__btn {
+        cursor: pointer;
+        color: black;
+        padding: 15px 122px;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 50px;
+        @include fluid-type(20px, 35px);
+        @media (max-width:500px) {
+            padding: 15px 100px;
+        }
+        transition: all 0.2s ease;
+        &:hover{
+            transform: scale(0.9);
+        }
+    }
+}

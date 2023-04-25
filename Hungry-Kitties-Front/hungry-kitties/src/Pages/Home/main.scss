@@ -1,0 +1,212 @@
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 500px, $upper-range:1640px) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+  
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media screen and (min-width: $upper-range){
+    font-size: $max-font-size;
+  }
+}
+
+.home {
+    padding-top: 94px;
+  }
+  @media (max-width: 500px) {
+    .home {
+      padding-top: 80px;
+
+    }
+  }
+  .home__container {
+    display: flex;
+    flex-direction: column;
+    gap: 188px;
+  }
+  @media (max-width: 800px) {
+    .home__container {
+      gap: 80px;
+    }
+  }
+  @media (max-width: 500px) {
+    .home__container {
+      gap: 30px;
+    }
+  }
+  .home__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 94px;
+  }
+  @media (max-width: 800px) {
+    .home__title {
+      gap: 38px;
+    }
+  }
+  .title__header {
+    color: #1E1E1E;
+    background-color: #1E1E1E;
+    @include fluid-type(60px, 120px);
+    white-space: wrap;
+    text-align: center;
+    line-height: 120%;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #DD6B20;
+    @media (max-width:900px) {
+      -webkit-text-stroke-width: 3px;
+    }
+  }
+  .title__text {
+    @include fluid-type(20px, 30px);
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 666px;
+    line-height: 150%;
+    @media (max-width:900px) {
+      line-height: 180%;
+    }
+  }
+
+  
+  .buttons__items {
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+  }
+  
+  @media (max-width: 900px) {
+    .buttons__items {
+      gap: 100px;
+    }
+  }
+  @media (max-width: 800px) {
+    .buttons__items {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 44px;
+    }
+  }
+  .buttons__item {
+    max-width: 333px;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    background-color: #DD6B20;
+    border-radius: 50px;
+    padding: 25px 80px;
+    transition: all 0.2s ease;
+  }
+  .buttons__item:hover {
+    transform: scale(0.9);
+  }
+  @media (max-width: 500px) {
+    .buttons__item {
+      font-size: 20px;
+      padding: 25px 50px;
+    }
+  }
+  
+  .home__cards {
+    padding-top: 280px;
+  }
+  @media (max-width: 800px) {
+    .home__cards {
+      padding-top: 94px;
+    }
+  }
+  
+  .cards__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 94px;
+  }
+  .card__title {
+    text-align: center;
+    line-height: 110%;
+    @include fluid-type(40px, 60px);
+  }
+
+  
+  .item__cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .item__cards > :nth-child(1) {
+    background: url("../../img/Goals1.jpg") 0 0/100% 100%;
+  }
+  .item__cards > :nth-child(2) {
+    background: url("../../img/goals2.png") 0 0/100% 100%;
+  }
+  .item__cards > :nth-child(3) {
+    background: url("../../img/Goals3.png") 0 0/100% 100%;
+  }
+  @media (max-width: 1000px) {
+    .item__cards {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 70px;
+    }
+  }
+  .item__body {
+    background-color: #DD6B20;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 0 0 400px;
+  }
+  @media (max-width: 1200px) {
+    .item__body {
+      flex: 0 0 300px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .item__body {
+      max-width: 400px;
+    }
+  }
+  .item__icon {
+    width: 113px;
+    height: 113px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1000px) {
+    .item__icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .item__title {
+    /* font-size: 80px; */
+    margin-bottom: 40px;
+    @include fluid-type(40px, 60px);
+  }
+  @media (max-width: 1500px) {
+    .item__title {
+      margin-bottom: 27px;
+    }
+  }
+  .item__text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
+    background-color: #272727;
+    border-radius: 40px;
+    padding: 30px 47px;
+    @include fluid-type(15px, 25px);  
+    line-height: 110%;
+  }
+
+  @media (max-width: 1500px) {
+    .item__text {
+      padding: 20px 37px;
+    }
+  }
