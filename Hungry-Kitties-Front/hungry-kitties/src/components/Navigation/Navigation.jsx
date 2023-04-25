@@ -15,10 +15,10 @@ const Navigation = () => {
             <ToastContainer />
             <div className="header__container">
                 <div className="header__block">
-                    <NavLink className="header__icon icon__header" to="/">
-                        <img src={icon} alt="" className="icon__img" />
-                        <div className="icon__title">Hungry Kitties</div>
-                    </NavLink>
+                    <div className="header__icon icon__header">
+                        <NavLink to="/"><img src={icon} alt="" className="icon__img" /></NavLink>
+                        <NavLink to="/"><div className="icon__title">Hungry Kitties</div></NavLink>
+                        </div>
 
                     <nav className="header__navigation navigation__header">
                         <ul className="navigation__items">
