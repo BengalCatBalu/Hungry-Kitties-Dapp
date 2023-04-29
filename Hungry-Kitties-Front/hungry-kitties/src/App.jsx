@@ -23,7 +23,7 @@ function App() {
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/explore' element={<Explore></Explore>}></Route>
-        <Route path='/shelter' element={<ShelterPage></ShelterPage>}></Route>
+        <Route path='/:id' element={<ShelterPage></ShelterPage>}></Route>
       </Routes>
       </Router>
 

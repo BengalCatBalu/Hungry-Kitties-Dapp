@@ -11,7 +11,6 @@ module hkplatform::DonationCollection {
     //use sui::event::emit;
     use std::vector;
     use sui::transfer;
-    use hkplatform::user::{Self, User};
     use hkplatform::admin::{Self, Admin};
     //use hkplatform::pool::{Self, Pool};
 
@@ -65,12 +64,11 @@ module hkplatform::DonationCollection {
     }
     */
 
-    public entry fun buy_nft(cap: &mut DonationCollection, payment: &mut Coin<SUI>, paymentValue: u64, user: &mut User, url: vector<u8>, ctx: &mut TxContext) {
+    public entry fun buy_nft(cap: &mut DonationCollection, payment: &mut Coin<SUI>, paymentValue: u64, url: vector<u8>, ctx: &mut TxContext) {
         assert!(cap.created < cap.supply, ETooManyNfts);
         cap.created = cap.created + 1;
         let val = coin::value(payment);
         assert!(val >= paymentValue, EInsufficientBalance);
-        user::inc_number_of_donations(user);
         // transfer funds to shelter
         let shelter_profits = coin::split(payment, paymentValue * 9 / 10, ctx);
         //let pool_profits = coin::split(payment, paymentValue / 10, ctx);
