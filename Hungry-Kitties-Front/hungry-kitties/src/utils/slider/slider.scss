@@ -1,17 +1,36 @@
-  .carousel {
-    max-width: 550px;
+img{
+  border-radius: 50px;
     width: 100%;
-  }
-  .carousel__main {
-    border-radius: 50px;
-    max-width: 770px;
-    height: 400px;
-  }
+    height: 100%;
+    display: block;
   
-  .demo-item {
-    max-width: 770px;
-    padding: 500px;
-    background-size: 100%;
-    
-  }
+}
+.swiper-slide {
+  height: auto !important;
+}
+.swiper-container {
+  height: auto !important;
+  overflow: hidden !important;
+  border-radius: 50px !important;
+}
+
+.swiper
+{
+  user-select: none;
+  border-radius: 50px !important;
+  height: 100% !important;
+}
+
+.slide{
+  border-radius: 50px !important;
+  height: 100% !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+    right:10px;
+    padding: 30px;
+    color: #fff !important;
   
+}

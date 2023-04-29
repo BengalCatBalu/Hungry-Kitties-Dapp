@@ -19,7 +19,7 @@
 }
 .shelter__slider {
   max-width: 550px;
-  height: auto;
+  /* height: auto; */
 }
 @media (max-width: 1000px) {
   .shelter__slider {
@@ -30,10 +30,12 @@
   font-size: 16px;
   line-height: 175%;
   text-align: center;
+  margin: auto 0;
   background: #DD6B20;
   border-radius: 50px;
   padding: 10px 25px;
   font-weight: 600;
+  height: auto;
 }
 @media (max-width: 500px) {
   .shelter__discription {
