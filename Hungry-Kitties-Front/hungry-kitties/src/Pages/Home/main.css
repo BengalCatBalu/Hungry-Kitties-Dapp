@@ -10,7 +10,7 @@
 .home__container {
   display: flex;
   flex-direction: column;
-  gap: 188px;
+  gap: 94px;
 }
 
 @media (max-width: 800px) {
@@ -125,7 +125,7 @@
   }
 }
 .home__cards {
-  padding-top: 280px;
+  padding-top: 250px;
 }
 
 @media (max-width: 800px) {
@@ -187,8 +187,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  flex: 0 0 400px;
+  padding: 30px;
+  flex: 0 0 380px;
 }
 
 @media (max-width: 1200px) {
@@ -216,7 +216,7 @@
 .item__title {
   /* font-size: 80px; */
   margin-bottom: 40px;
-  font-size: calc(40px + 20 * ( (100vw - 500px) / 1140));
+  font-size: calc(40px + 10 * ( (100vw - 500px) / 1140));
 }
 @media screen and (max-width: 500px) {
   .item__title {
@@ -225,7 +225,7 @@
 }
 @media screen and (min-width: 1640px) {
   .item__title {
-    font-size: 60px;
+    font-size: 50px;
   }
 }
 
@@ -242,8 +242,8 @@
   text-align: center;
   background-color: #272727;
   border-radius: 40px;
-  padding: 30px 47px;
-  font-size: calc(15px + 10 * ( (100vw - 500px) / 1140));
+  padding: 30px;
+  font-size: calc(15px + 8 * ( (100vw - 500px) / 1140));
   line-height: 110%;
 }
 @media screen and (max-width: 500px) {
@@ -253,7 +253,7 @@
 }
 @media screen and (min-width: 1640px) {
   .item__text {
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 

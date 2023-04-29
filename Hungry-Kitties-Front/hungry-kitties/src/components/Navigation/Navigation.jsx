@@ -24,7 +24,6 @@ const Navigation = () => {
                         <ul className="navigation__items">
                             <NavLink to='/profile'><li className="navigation__item">Profile</li></NavLink>
                             <NavLink to='/explore'><li className="navigation__item">Explore</li></NavLink> 
-                            <li className="navigation__item">Our Media</li>
                         </ul>
                     </nav>
 
