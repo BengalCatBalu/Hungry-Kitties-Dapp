@@ -1,12 +1,10 @@
 import './shelterpage.css'
-import shelterImage from '../../img/shelter1.webp'
-
 import getCollectionInfo from '../../utility_functions/server/collectionApiRequest';
 import React, { useState, useEffect } from 'react'
 
 
 const ShelterPage = () => {
-    const [shelter, setShelter] = useState(null);
+  /*   const [shelter, setShelter] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -24,7 +22,7 @@ const ShelterPage = () => {
         }
         fetchData();
     }, []);
-
+ */
 
     return ( 
        <div className="shelter">
@@ -61,8 +59,3 @@ const ShelterPage = () => {
 }
  
 export default ShelterPage;
-
- {/* <div className="mint__donate">
-                                <input min='0.1' step='0.1' name='sui' id='sui' type="number" placeholder='How much would you like to donate to the shelter' className="mint__input" />
-                                <label htmlFor="sui" className="mint__sui">SUI</label>
-                            </div> */}
