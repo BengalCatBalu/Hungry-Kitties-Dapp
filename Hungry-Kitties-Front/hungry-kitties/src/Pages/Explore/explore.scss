@@ -78,8 +78,8 @@
 
     &__img {
         width: 100%;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
+        border-top-left-radius: 50px !important;
+        border-top-right-radius: 50px !important;
     }
 
     // .items__footer

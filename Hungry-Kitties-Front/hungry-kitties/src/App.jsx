@@ -8,6 +8,8 @@ import Navigation from './components/Navigation/Navigation';
 import ScrollToTop from './utils/scrollToTop';
 import Explore from './Pages/Explore/Explore';
 import ShelterPage from './Pages/ShelterPage/ShelterPage';
+import Footer from './components/Footer/Footer.jsx';
+
 
 
 function App() {
@@ -20,11 +22,12 @@ function App() {
         
       <Navigation></Navigation>
       <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/profile' element={<Profile></Profile>}></Route>
-        <Route path='/explore' element={<Explore></Explore>}></Route>
-        <Route path='/shelter' element={<ShelterPage></ShelterPage>}></Route>
+        <Route path='/' element={<Main className='main'></Main>}></Route>
+        <Route path='/profile' element={<Profile className='main'></Profile>}></Route>
+        <Route path='/explore' element={<Explore className='main'></Explore>}></Route>
+        <Route path='/shelter' element={<ShelterPage className='main'></ShelterPage>}></Route>
       </Routes>
+      <Footer></Footer>
       </Router>
 
     </div>

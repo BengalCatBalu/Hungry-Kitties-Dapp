@@ -1,10 +1,4 @@
-img{
-  border-radius: 50px;
-    width: 100%;
-    height: 100%;
-    display: block;
-  
-}
+
 .swiper-slide {
   height: auto !important;
 }
@@ -21,9 +15,16 @@ img{
   height: 100% !important;
 }
 
-.slide{
+.swiper-slide{
   border-radius: 50px !important;
   height: 100% !important;
+  img{
+    width: 100%;
+    height: 100%;
+    display: block;
+  
+}
+
 }
 
 .swiper-button-next,
@@ -34,3 +35,4 @@ img{
     color: #fff !important;
   
 }
+
