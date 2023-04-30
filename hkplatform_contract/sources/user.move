@@ -1,5 +1,7 @@
 //used as a profile of the person who donates through the platform, this structure collects donation statistics
 //minted once during user registration
+
+/*
 module hkplatform::user {
     use sui::object::{Self, UID};
     use std::string;
@@ -91,12 +93,11 @@ module hkplatform::user {
         //emit(NewDonation{from_address: self.owner, to_address: to_address});
         self.number_of_donations = self.number_of_donations + 1;
     }
-    /*
     public entry fun collect_profit(self: &mut User, ctx: &mut TxContext) {
         let amount = balance::value(&self.balance);
         let profits = coin::take(&mut self.balance, amount, ctx);
 
         transfer::transfer(profits, tx_context::sender(ctx))
     }
-    */
 }
+*/

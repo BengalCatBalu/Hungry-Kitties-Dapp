@@ -22,10 +22,12 @@ function App() {
         
       <Navigation></Navigation>
       <Routes>
-        <Route path='/' element={<Main className='main'></Main>}></Route>
-        <Route path='/profile' element={<Profile className='main'></Profile>}></Route>
-        <Route path='/explore' element={<Explore className='main'></Explore>}></Route>
-        <Route path='/shelter' element={<ShelterPage className='main'></ShelterPage>}></Route>
+
+        <Route path='/' element={<Main></Main>}></Route>
+        <Route path='/profile' element={<Profile></Profile>}></Route>
+        <Route path='/explore' element={<Explore></Explore>}></Route>
+        <Route path='/:id' element={<ShelterPage></ShelterPage>}></Route>
+
       </Routes>
       <Footer></Footer>
       </Router>
