@@ -1,0 +1,142 @@
+.footer__container {
+  padding-top: 94px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 24px;
+}
+.footer__upper {
+  max-width: 1150px;
+  margin: 0 auto;
+  width: 100%;
+}
+.footer__line {
+  background-color: #DD6B20;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  height: 3px;
+  border-radius: 50px;
+}
+.upper {
+  /*  @media (max-width:650px) {
+       &__image{
+           width: 28.6px;
+           height: 28.6px;
+       }
+
+       &__image-discord{
+           width: 36.6px;
+           height: 36.6px;
+       }
+
+       &__image-medium{
+           width: 46px;
+           height: 46px;
+       }
+   } */
+}
+.upper__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 1000px) {
+  .upper__footer {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+.upper__social {
+  /* margin-right: auto; */
+  align-self: flex-end;
+}
+@media (max-width: 1000px) {
+  .upper__social {
+    margin: 0 auto;
+  }
+}
+.upper__icons {
+  display: flex !important;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.upper__image {
+  width: 43px;
+  height: 43px;
+}
+.upper__image-discord {
+  width: 55px;
+  height: 55px;
+}
+.upper__image-medium {
+  width: 69px;
+  height: 69px;
+}
+.links__items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1120px) {
+  .links__items {
+    flex-wrap: wrap;
+  }
+}
+.links__item {
+  font-size: calc(12px + 8 * ( (100vw - 400px) / 860));
+  padding: 15px 47px;
+  background: #272727;
+  border-radius: 50px;
+  text-align: center;
+}
+@media screen and (max-width: 400px) {
+  .links__item {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .links__item {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1120px) {
+  .links__item {
+    flex: 1 1 auto;
+  }
+}
+@media (max-width: 650px) {
+  .links__item {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 470px) {
+  .links__item {
+    font-size: 12px;
+    flex: 0 1 auto;
+    padding: 15px 23px;
+    width: 100%;
+  }
+}
+
+.bottom__footer {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom__text {
+  font-size: calc(10px + 5 * ( (100vw - 400px) / 860));
+}
+@media screen and (max-width: 400px) {
+  .bottom__text {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .bottom__text {
+    font-size: 15px;
+  }
+}

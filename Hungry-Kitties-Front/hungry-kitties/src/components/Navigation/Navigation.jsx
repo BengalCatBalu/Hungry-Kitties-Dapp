@@ -37,7 +37,7 @@ const Navigation = () => {
                             <li className="right-block__navigation-item" onClick={wallet.disconnect}>Disconnect</li>
                         )
                         }
-                        <li className="right-block__navigation-item navigation__item-scan "
+                        <li className="right-block__navigation-item right-block__navigation-item-scan"
                             onClick={() => {
                                 if (!wallet) {
                                     toast.warning('Please, connect your wallet', {
@@ -51,6 +51,7 @@ const Navigation = () => {
                                 }
                             }
                         }
+                        
                         ></li>
                     </ul>
                 </div>

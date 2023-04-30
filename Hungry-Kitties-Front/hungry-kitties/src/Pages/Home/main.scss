@@ -11,7 +11,6 @@
 }
 
 .home {
-    padding-top: 94px;
   }
   @media (max-width: 500px) {
     .home {
@@ -22,7 +21,8 @@
   .home__container {
     display: flex;
     flex-direction: column;
-    gap: 94px;
+    min-height: 100vh;
+  
   }
   @media (max-width: 800px) {
     .home__container {
@@ -34,11 +34,18 @@
       gap: 30px;
     }
   }
+
+  .home__content{
+
+  }
   .home__title {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 94px;
+    justify-content: center;
+    
   }
   @media (max-width: 800px) {
     .home__title {
@@ -63,7 +70,7 @@
     color: #FFFFFF;
     text-align: center;
     max-width: 666px;
-    line-height: 150%;
+    line-height: 200%;
     @media (max-width:900px) {
       line-height: 180%;
     }
@@ -74,7 +81,7 @@
     white-space: nowrap;
     display: flex;
     justify-content: center;
-    gap: 200px;
+    
   }
   
   @media (max-width: 900px) {
@@ -90,13 +97,13 @@
     }
   }
   .buttons__item {
-    max-width: 333px;
     cursor: pointer;
     font-size: 30px;
     color: white;
+    text-align: center;
     background-color: #DD6B20;
     border-radius: 50px;
-    padding: 25px 80px;
+    padding: 25px 50px;
     transition: all 0.2s ease;
   }
   .buttons__item:hover {
@@ -110,7 +117,7 @@
   }
   
   .home__cards {
-    padding-top: 250px;
+    
   }
   @media (max-width: 800px) {
     .home__cards {
@@ -175,6 +182,7 @@
     width: 113px;
     height: 113px;
     margin-bottom: 20px;
+    border-radius: 0px !important;
   }
   @media (max-width: 1000px) {
     .item__icon {
@@ -210,3 +218,66 @@
       padding: 20px 37px;
     }
   }
+
+  .home {
+
+		// .home__distribution
+
+		&__distribution {
+      padding-top: 188px;
+      @media (max-width:1000px) {
+        padding-top: 94px;
+      }
+		}
+}
+.distribution {
+
+		// .distribution__home
+
+		&__home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+		}
+
+		// .distribution__title
+
+		&__title {
+      @include fluid-type(40px, 60px);
+      text-align: center;
+      margin-bottom: 47px;
+		}
+
+		// .distribution__content
+
+		&__content {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      @media (max-width:1260px) {
+        flex-direction: column;
+      }
+		}
+
+		// .distribution__text
+
+		&__text {
+      @include fluid-type(20px, 30px);
+      line-height: 160%;
+      max-width: 600px;
+      @media (max-width:1260px) {
+        text-align: center;
+        line-height: 200%;
+      }
+		}
+
+		// .distribution__donut
+
+		&__donut {
+      max-width: 607px;
+      width: 100%;
+      
+		}
+}

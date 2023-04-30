@@ -1,10 +1,9 @@
 import './explore.css'
-import React from "react";
 import Shelter from '../../components/Shelter/Shelter'
 import React, { useState } from 'react'
 
 const Explore = () => {
-     const [collections, setCollections] = useState(null);
+   /*   const [collections, setCollections] = useState(null);
      const [loading, setLoading] = useState(true);
      const [error, setError] = useState(null);
 
@@ -20,11 +19,11 @@ const Explore = () => {
                }
           }
           fetchData();
-      }, []);
+      }, []); */
 
      return (
           <>
-               <div className="explore__container exlore__container-small">
+               <div className="explore__container exlore__container-smaller">
                     <div className="explore__content">
                          <h1 className="explore__title">Explore Charity Events On Sui</h1>
                          <div className="explore__items items__explore">
