@@ -1,10 +1,10 @@
 import './shelterpage.css'
 import getCollectionInfo from '../../utility_functions/server/collectionApiRequest';
 import React, { useState, useEffect } from 'react'
-
+import Slider from '../../utils/slider/Slider.jsx'
 
 const ShelterPage = () => {
-  /*   const [shelter, setShelter] = useState(null);
+    const [shelter, setShelter] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -22,7 +22,7 @@ const ShelterPage = () => {
         }
         fetchData();
     }, []);
- */
+
 
     return ( 
        <div className="shelter">

@@ -12,17 +12,17 @@ const Footer = () => {
                     <div className="footer__upper upper__footer">
                         <div className="upper__social">
                             <ul className="upper__icons">
-                                <li className="upper__icon"> <a href=""> <img src={medium} alt="" className="upper__image upper__image-medium" /></a></li>
-                                <li className="upper__icon"><a href=""> <img src={discord} alt="" className="upper__image upper__image-discord" /></a></li>
-                                <li className="upper__icon"><a href=""> <img src={twitter} alt="" className="upper__image  " /></a></li>
+                                <li className="upper__icon"> <a target='_blank' href=""> <img src={medium} alt="" className="upper__image upper__image-medium" /></a></li>
+                                <li className="upper__icon"><a target='_blank' href=""> <img src={discord} alt="" className="upper__image upper__image-discord" /></a></li>
+                                <li className="upper__icon"><a target='_blank' href="https://twitter.com/hungrykitties"> <img src={twitter} alt="" className="upper__image  " /></a></li>
                             </ul>
                         </div>
                         <div className="upper__links links__upper">
                             <ul className="links__items">                  
                               <NavLink to='/'> <li className="links__item">Home</li></NavLink>
-                                <li className="links__item"><a href="#">Main Site</a></li>
-                                <li className="links__item"><a href="#">Parnerships</a></li>
-                                <li className="links__item"><a href="#">GitHub</a></li>                              
+                                <li className="links__item"><a target='_blank' href="#">Main Site</a></li>
+                                <li className="links__item"><a target='_blank' href="#">Parnerships</a></li>
+                                <li className="links__item"><a target='_blank' href="#">GitHub</a></li>                              
                             </ul>
                         </div>
                         

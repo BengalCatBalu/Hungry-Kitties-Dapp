@@ -3,7 +3,7 @@ import Shelter from '../../components/Shelter/Shelter'
 import React, { useState } from 'react'
 
 const Explore = () => {
-     const [collections, setCollections] = useState(null);
+   /*   const [collections, setCollections] = useState(null);
      const [loading, setLoading] = useState(true);
      const [error, setError] = useState(null);
 
@@ -19,7 +19,7 @@ const Explore = () => {
                }
           }
           fetchData();
-      }, []);
+      }, []); */
 
      return (
           <>
