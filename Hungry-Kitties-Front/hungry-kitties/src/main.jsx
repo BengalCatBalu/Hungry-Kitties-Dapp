@@ -6,7 +6,10 @@ import { EthosConnectProvider } from 'ethos-connect';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <EthosConnectProvider>
+    <EthosConnectProvider
+      dappName="Hungry Kitties KIFT Platform"
+      connectMessage='Mew Mew! Welcome!' 
+    >
       <App />
     </EthosConnectProvider>
   </React.StrictMode>,

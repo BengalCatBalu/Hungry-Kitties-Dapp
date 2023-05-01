@@ -1,25 +1,27 @@
 import './explore.css'
 import Shelter from '../../components/Shelter/Shelter'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import getAllCollectionsInfo from '../../utility_functions/server/allCollectionsApiRequest';
 
 const Explore = () => {
-   /*   const [collections, setCollections] = useState(null);
+     const [collections, setCollections] = useState(null);
      const [loading, setLoading] = useState(true);
-     const [error, setError] = useState(null);
+     const [error, setError] = useState(true);
 
      useEffect(() => {
           async function fetchData() {
                try {
-                    const data = await getAllCollections();
+                    const data = await getAllCollectionsInfo();
                     setCollections(data);
                     setLoading(false);
+                    setError(false);
                } catch (error) {
                     console.log(error);
                     setError(error);
                }
           }
           fetchData();
-      }, []); */
+      }, []);
 
      return (
           <>
