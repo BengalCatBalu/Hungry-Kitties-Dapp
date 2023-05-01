@@ -18,24 +18,6 @@
   height: 3px;
   border-radius: 50px;
 }
-.upper {
-  /*  @media (max-width:650px) {
-       &__image{
-           width: 28.6px;
-           height: 28.6px;
-       }
-
-       &__image-discord{
-           width: 36.6px;
-           height: 36.6px;
-       }
-
-       &__image-medium{
-           width: 46px;
-           height: 46px;
-       }
-   } */
-}
 .upper__footer {
   display: flex;
   align-items: center;
@@ -67,6 +49,10 @@
 .upper__image {
   width: 43px;
   height: 43px;
+  transition: all 0.2s ease;
+}
+.upper__image:hover {
+  transform: scale(0.9);
 }
 .upper__image-discord {
   width: 55px;
@@ -93,6 +79,7 @@
   background: #272727;
   border-radius: 50px;
   text-align: center;
+  transition: all 0.2s ease;
 }
 @media screen and (max-width: 400px) {
   .links__item {
@@ -103,6 +90,9 @@
   .links__item {
     font-size: 20px;
   }
+}
+.links__item:hover {
+  transform: scale(0.9);
 }
 @media (max-width: 1120px) {
   .links__item {
@@ -117,7 +107,7 @@
 @media (max-width: 470px) {
   .links__item {
     font-size: 12px;
-    flex: 0 1 auto;
+    /*  flex: 0 1 auto; */
     padding: 15px 23px;
     width: 100%;
   }

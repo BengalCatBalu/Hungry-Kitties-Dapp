@@ -1,0 +1,43 @@
+.register__container {
+  padding-top: 47px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 50px;
+}
+.register__title {
+  font-size: calc(30px + 20 * ( (100vw - 300px) / 1340));
+  text-align: center;
+  line-height: 160%;
+}
+@media screen and (max-width: 300px) {
+  .register__title {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1640px) {
+  .register__title {
+    font-size: 50px;
+  }
+}
+.register__btn {
+  font-size: 40px;
+  font-weight: 700;
+  background-color: #fff;
+  color: black;
+  border-radius: 50px;
+  padding: 15px 0px;
+  max-width: 300px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.register__btn:hover {
+  transform: scale(0.9);
+}
+
+.rigster__image {
+  max-width: 350px;
+  width: 100%;
+}

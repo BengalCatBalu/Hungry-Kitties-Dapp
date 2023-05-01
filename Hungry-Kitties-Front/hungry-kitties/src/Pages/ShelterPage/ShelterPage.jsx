@@ -32,16 +32,18 @@ const ShelterPage = () => {
                     <div className="shelter__slider">
                         <Slider className="shelter__swiper"></Slider>
                     </div>
-                    <div className="shelter__discription">  <a className='shelter__link' href="">Shelter Name</a> dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.
+                    <div className="shelter__discription">
+                    <div className="shelter__text">  <a className='shelter__link' href="">Shelter Name</a> dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.
                     Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.
                     Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.
                     </div> 
+                    </div>
                     </div>
                     <div className="shelter__footer ">
                         <div className="shelter__donate">
                         <div className="shelter__label">How much would you like to donate to the shelter</div>
                         <div className="shelter__input">
-                        <input min='0.1' step='0.1' name='sui' id='sui' type="number"  className="shelter__value" />
+                        <input min='0.01' step='0.1' name='sui' id='sui' type="number"  className="shelter__value" />
                         <div className="shelter__token">SUI</div>
                         </div>
                         <div className="shelter__mint">Mint</div>

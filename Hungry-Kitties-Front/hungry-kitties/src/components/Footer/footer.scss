@@ -94,6 +94,10 @@
     &__image{
         width: 43px;
         height: 43px;
+        transition: all 0.2s ease;
+        &:hover{
+            transform: scale(0.9);
+        }
     }
 
     &__image-discord{
@@ -105,23 +109,6 @@
         width: 69px;
         height: 69px;
     }
-    // .upper__links
-   /*  @media (max-width:650px) {
-        &__image{
-            width: 28.6px;
-            height: 28.6px;
-        }
-    
-        &__image-discord{
-            width: 36.6px;
-            height: 36.6px;
-        }
-    
-        &__image-medium{
-            width: 46px;
-            height: 46px;
-        }
-    } */
 
     &__links {
     }
@@ -155,6 +142,10 @@
         background: #272727;
         border-radius: 50px;
         text-align: center;
+        transition: all 0.2s ease;
+        &:hover{
+            transform: scale(0.9);
+        }
         @media (max-width:1120px) {
            flex: 1 1 auto;
           }
@@ -164,7 +155,7 @@
          } 
          @media (max-width:470px) {
             font-size: 12px;
-            flex: 0 1 auto;
+           /*  flex: 0 1 auto; */
             padding: 15px 23px;
             width: 100%;
          } 

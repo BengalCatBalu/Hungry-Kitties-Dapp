@@ -15,7 +15,6 @@ const Home = () => {
                     <h2 className="title__text">Transforming digital art into tangible impact with Hungry Kitties charitable NFTs.</h2>
                     <ul className="buttons__items">
                         <li className="buttons__item">Suggest your Shelter</li>
-                       {/*  <li className="buttons__item">Distribution</li> */}
                     </ul>
                 </div>
                 
