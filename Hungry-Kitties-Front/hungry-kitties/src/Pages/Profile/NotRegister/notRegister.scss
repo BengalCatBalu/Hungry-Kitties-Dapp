@@ -1,0 +1,63 @@
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 300px, $upper-range:1640px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+    
+    @media screen and (max-width: $lower-range) {
+      font-size: $min-font-size;
+    }
+    @media screen and (min-width: $upper-range){
+      font-size: $max-font-size;
+    }
+  }
+
+
+.register {
+
+    // .register__container
+
+    &__container {
+        padding-top: 47px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 50px;
+    }
+
+    // .register__title
+
+    &__title {
+        @include fluid-type (30px, 50px);
+        text-align: center;
+        line-height: 160%;
+       
+    }
+
+    // .register__btn
+
+    &__btn {
+        font-size: 40px;
+        font-weight: 700;
+        background-color: #fff;
+        color: black;
+        border-radius: 50px;
+        padding: 15px 0px;
+        max-width: 300px;
+        width: 100%;
+        transition: all 0.2s ease;
+        &:hover{
+            transform: scale(0.9);
+        }
+    }
+}
+.rigster {
+
+    // .rigster__image
+
+    &__image {
+        max-width: 350px;
+        width: 100%;
+        
+    }
+}

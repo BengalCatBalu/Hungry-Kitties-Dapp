@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { ethos, EthosConnectStatus, SignInButton  } from 'ethos-connect'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 
 const Navigation = () => {
@@ -38,6 +39,7 @@ const Navigation = () => {
                             } >Profile</li>
                             <NavLink to='/explore'><li className="navigation__item">Explore</li></NavLink> 
                         </ul>
+                        
                     </nav>
 
                 </div>
@@ -66,6 +68,7 @@ const Navigation = () => {
                         }
                         
                         ></li>
+                        <BurgerMenu></BurgerMenu>
                     </ul>
                 </div>
             </div>

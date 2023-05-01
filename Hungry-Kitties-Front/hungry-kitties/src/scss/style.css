@@ -270,3 +270,8 @@ h6 {
     line-height: normal;
   }
 }
+
+
+.App{
+  display: flex;
+}
