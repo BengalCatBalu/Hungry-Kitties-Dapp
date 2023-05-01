@@ -22,7 +22,20 @@ const Navigation = () => {
 
                     <nav className="header__navigation navigation__header">
                         <ul className="navigation__items">
-                            <NavLink to='/profile'><li className="navigation__item">Profile</li></NavLink>
+                            <li className="navigation__item" onClick={
+                                () => {
+                                    if (!wallet) {
+                                        toast.warning('Please, connect your wallet', {
+                                            duration: 1500,
+                                            closeOnClick: false,
+                                            closeButton: true,
+                                            position: 'bottom-center',
+                                          });
+                                    } else {
+                                        window.location.href = "/profile";
+                                    }
+                                }
+                            } >Profile</li>
                             <NavLink to='/explore'><li className="navigation__item">Explore</li></NavLink> 
                         </ul>
                     </nav>
