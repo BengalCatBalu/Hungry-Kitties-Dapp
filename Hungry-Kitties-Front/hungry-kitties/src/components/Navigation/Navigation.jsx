@@ -49,7 +49,10 @@ const Navigation = () => {
                         {!wallet ? (
                             <li className="right-block__navigation-item" onClick={ethos.showSignInModal}>Connect Wallet</li>
                         ) : (
-                            <li className="right-block__navigation-item" onClick={wallet.disconnect}>Disconnect</li>
+                            <li className="right-block__navigation-item" onClick={
+                                wallet.disconnect
+                                //window.location.href = '/'
+                            }>Disconnect</li>
                         )
                         }
                         <li className="right-block__navigation-item right-block__navigation-item-scan"

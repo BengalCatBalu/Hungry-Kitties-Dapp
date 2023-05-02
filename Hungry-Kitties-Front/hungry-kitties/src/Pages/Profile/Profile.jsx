@@ -13,9 +13,12 @@ const Profile = () => {
     const { wallet } = ethos.useWallet();
     const [user, setUser] = useState(null);
     const [notRegister, setNotRegister] = useState(false);
-
+    const [nfts, setNfts] = useState(null);
     useEffect(() => {
         async function fetchData() {
+            if (!wallet) {
+                return
+            }
             try {
                 const data = await getUserInfo(wallet.address);
                 if (data == null) {
@@ -29,22 +32,18 @@ const Profile = () => {
         }
         fetchData();
     }, [wallet?.address]);
+
     if (!wallet) {
-        return (
-            <div>
-                <h1>Connect wallet</h1>
-            </div>
-        )
+        return <div> No connection </div>
     }
 
     if (notRegister) {
         return (
-           <div className="main">
-            <NotRegister/>
+            <div className="main">
+                <NotRegister />
             </div>
         )
     }
-
     return (
         <>
             <div className="profile">
@@ -69,18 +68,20 @@ const Profile = () => {
                         <div className="charity__discription">Charity Points are Points that affect your chance of winning a pool</div>
                     </div>
                 </div>
-            <div className="profile__nft nft__profile">
-                <div className="nft__container nft__container-smaller">
-                    <div className="nft__lebel">Your NFTs</div>
-                    <div className="nft__block">
-                       <Nft></Nft>
-                       <Nft></Nft>
-                       <Nft></Nft>
-                       <Nft></Nft>
+                <div className="profile__nft nft__profile">
+                    <div className="nft__container nft__container-smaller">
+                        <div className="nft__lebel">Your NFTs</div>
+                        <div className="nft__block">
+                            {wallet.contents?.nfts.map((nft) => (
+                                <>
+                                {console.log("https://explorer.sui.io/object/" + nft.objectId)}
+                                <Nft imageUrl={nft.imageUrl} name={nft.name} id = {nft.objectId} />
+                                </>
+                            ))}
+                        </div>
+
                     </div>
-                    
                 </div>
-            </div>
 
             </div>
 

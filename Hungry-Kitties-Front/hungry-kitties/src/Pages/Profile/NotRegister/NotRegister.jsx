@@ -2,12 +2,11 @@ import React from 'react';
 import { useCallback } from 'react'
 import { ethos } from 'ethos-connect'
 import axios from 'axios';
-import reg  from '../../../img/register.webp';
+import reg from '../../../img/register.webp';
 import './notRegister.css'
 import '../../../css/style.css'
 function NotRegister() {
     const { wallet } = ethos.useWallet()
-
     const register = useCallback(async () => {
         if (!wallet?.currentAccount) return
         try {
@@ -31,14 +30,14 @@ function NotRegister() {
     }, [wallet])
 
     return (
-       
+
         <div className="register">
             <div className="register__container">
-                <h1 className="register__title">Min Our Register NFT</h1>
+                <h1 className="register__title">Min Our Register NFT or connect your Wallet</h1>
                 <img src={reg} alt="" className="rigster__image" />
                 <button className='register__btn' onClick={register}>
                     Mint Me
-                </button> 
+                </button>
             </div>
         </div>
     );
@@ -46,4 +45,3 @@ function NotRegister() {
 
 export default NotRegister;
 
- 
