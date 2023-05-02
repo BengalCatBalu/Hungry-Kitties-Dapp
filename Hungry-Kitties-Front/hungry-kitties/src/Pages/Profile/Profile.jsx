@@ -5,6 +5,7 @@ import { ethos } from 'ethos-connect'
 import React, { useState, useEffect, Component } from 'react'
 import getUserInfo from '../../utility_functions/server/userApiRequest'
 import NotRegister from './NotRegister/NotRegister'
+import AllNfts from './AllNftsOnWallet/AllNfts'
 
 const Profile = () => {
     const { wallet } = ethos.useWallet();

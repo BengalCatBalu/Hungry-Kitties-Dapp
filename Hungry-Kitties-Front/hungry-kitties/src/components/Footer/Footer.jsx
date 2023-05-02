@@ -7,7 +7,7 @@ import ScrollToTop from '../../utils/scrollToTop';
 const Footer = () => {
     return (
         <>
-           <footer className="footer">
+            <footer className="footer">
                 <div className="footer__container">
                     <div className="footer__upper upper__footer">
                         <div className="upper__social">
@@ -18,35 +18,43 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="upper__links links__upper">
-                            <ul className="links__items">                  
-                              <NavLink className="links__item" to='/'> <li>Home</li></NavLink>
-                                <li className="links__item"><a target='_blank' href="https://hungry-kitties.com/">Main Site</a></li>
+                            <ul className="links__items">
+                                <NavLink className="links__item" onClick={
+                                    () => {
+                                        if (window.location.pathname !== "/") {
+                                            window.location.href = '/';
+                                        } else {
+                                            const topElement = document.querySelector('body');
+                                            topElement.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}> <li>Home</li></NavLink>
+                                <li className="links__item"> <a target='_blank' href="https://hungry-kitties.com/">Main Site</a></li>
                                 <li className="links__item"><a target='_blank' href="https://4a89rkoz1ve.typeform.com/to/iBZZFgIR?typeform-source=hungry-kitties.com">Parnerships</a></li>
-                                <li className="links__item"><a target='_blank' href="https://github.com/BengalCatBalu/Tools-Components">GitHub</a></li>                              
+                                <li className="links__item"><a target='_blank' href="https://github.com/BengalCatBalu/Tools-Components">GitHub</a></li>
                             </ul>
                         </div>
-                        
+
                     </div>
                     <div className="footer__line"></div>
-                <div className="footer__bottom bottom__footer">
-                    <div className="bottom__text">© 2023 Hungry Kitties. All rights reserved.</div>
-                    <a href='mailto:hungrykittties@gmail.com' className="bottom__text">hungrykittties@gmail.com</a>
-                </div>
+                    <div className="footer__bottom bottom__footer">
+                        <div className="bottom__text">© 2023 Hungry Kitties. All rights reserved.</div>
+                        <a href='mailto:hungrykittties@gmail.com' className="bottom__text">hungrykittties@gmail.com</a>
+                    </div>
 
 
 
                 </div>
-            
-            
-            
-            
-            
-            </footer> 
-        
-        
+
+
+
+
+
+            </footer>
+
+
         </>
 
     );
 }
- 
+
 export default Footer;
