@@ -85,25 +85,28 @@ h6 {
 }
 .profile__container {
   display: flex;
-  -moz-column-gap: 110px;
-       column-gap: 110px;
+  gap: 40px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
   .profile__container {
     flex-direction: column;
     gap: 47px;
     align-items: center;
   }
 }
+.card {
+  flex: 1 1 auto;
+}
 .card__body {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: url("../../img/profilebg.png") 0 0/101% 101% #DD6B20;
   border-radius: 50px;
-  padding: 30px 32px;
-  row-gap: 63px;
+  padding: 30px 20px;
+  row-gap: 30px;
 }
 @media (max-width: 550px) {
   .card__body {
@@ -117,12 +120,6 @@ h6 {
   max-height: 300px;
   width: 100%;
   height: 100%;
-}
-@media (max-width: 1200px) {
-  .card__avatar {
-    max-width: 156px;
-    max-height: 156px;
-  }
 }
 .card__wallet-address {
   font-size: calc(18px + 22 * ( (100vw - 500px) / 1140));
@@ -156,7 +153,7 @@ h6 {
     font-size: 30px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 1000px) {
   .card__scan {
     padding: 17px 130px;
   }
@@ -165,7 +162,7 @@ h6 {
 .charity__profile {
   background-color: #272727;
   border-radius: 50px;
-  padding: 39px 76px;
+  padding: 39px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +177,7 @@ h6 {
 .charity__donated {
   /* font-size: 150px; */
   font-weight: 400;
-  font-size: calc(40px + 70 * ( (100vw - 500px) / 1140));
+  font-size: calc(40px + 30 * ( (100vw - 500px) / 1140));
 }
 @media screen and (max-width: 500px) {
   .charity__donated {
@@ -189,11 +186,11 @@ h6 {
 }
 @media screen and (min-width: 1640px) {
   .charity__donated {
-    font-size: 110px;
+    font-size: 70px;
   }
 }
 .charity__text {
-  font-size: calc(15px + 10 * ( (100vw - 500px) / 1140));
+  font-size: calc(15px + 5 * ( (100vw - 500px) / 1140));
   color: #DD6B20;
   margin-bottom: 10px;
 }
@@ -204,11 +201,11 @@ h6 {
 }
 @media screen and (min-width: 1640px) {
   .charity__text {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 .charity__under-text {
-  font-size: calc(15px + 10 * ( (100vw - 500px) / 1140));
+  font-size: calc(15px + 5 * ( (100vw - 500px) / 1140));
 }
 @media screen and (max-width: 500px) {
   .charity__under-text {
@@ -217,16 +214,16 @@ h6 {
 }
 @media screen and (min-width: 1640px) {
   .charity__under-text {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 .charity__line {
-  height: 11px;
+  height: 5px;
   max-width: 839px;
   width: 100%;
   background-color: #DD6B20;
   border-radius: 50px;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 @media (max-width: 700px) {
   .charity__line {
@@ -236,7 +233,7 @@ h6 {
 }
 .charity__points {
   /* font-size: 150px; */
-  font-size: calc(40px + 70 * ( (100vw - 500px) / 1140));
+  font-size: calc(40px + 30 * ( (100vw - 500px) / 1140));
 }
 @media screen and (max-width: 500px) {
   .charity__points {
@@ -245,7 +242,7 @@ h6 {
 }
 @media screen and (min-width: 1640px) {
   .charity__points {
-    font-size: 110px;
+    font-size: 70px;
   }
 }
 .charity__discription {
@@ -253,7 +250,7 @@ h6 {
   letter-spacing: 0.045em;
   max-width: 839px;
   line-height: 38px;
-  font-size: calc(15px + 10 * ( (100vw - 500px) / 1140));
+  font-size: calc(15px + 5 * ( (100vw - 500px) / 1140));
 }
 @media screen and (max-width: 500px) {
   .charity__discription {
@@ -262,11 +259,94 @@ h6 {
 }
 @media screen and (min-width: 1640px) {
   .charity__discription {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 @media (max-width: 925px) {
   .charity__discription {
     line-height: normal;
   }
+}
+
+.nft__container {
+  padding-top: 94px;
+}
+.nft__lebel {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 47px;
+}
+.nft__block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+@media (max-width: 660px) {
+  .nft__block {
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+  }
+}
+@media (max-width: 980px) {
+  .nft__block {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+.nft__body {
+  margin: 0 -10px;
+  padding: 0 20px;
+}
+@media (max-width: 980px) {
+  .nft__body {
+    /* flex: 1 0 50%; */
+  }
+}
+.nft__image {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+}
+.nft__foter {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  background: #272727;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  max-width: 300px;
+}
+.nft__title {
+  font-weight: 400;
+}
+.nft__scan {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 7px 18px;
+  background-color: #fff;
+  border-radius: 50px;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+.nft__scan:hover {
+  background: #a1a09f;
+}
+.nft__sell {
+  cursor: pointer;
+  font-size: 15px;
+  background: #DD6B20;
+  padding: 12px 15px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.nft__sell:hover {
+  background: #b34b05;
 }

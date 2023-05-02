@@ -15,7 +15,7 @@ const Home = () => {
                     <h1 className="title__header">KIFT PLATFORM</h1>
                     <h2 className="title__text">Transforming digital art into tangible impact with Hungry Kitties charitable NFTs.</h2>
                     <ul className="buttons__items">
-                      <NavLink to = "https://4a89rkoz1ve.typeform.com/to/ubTZDERp?typeform-source=hungry-kitties.com" ><li className="buttons__item">Suggest your Shelter</li></NavLink>
+                      <NavLink target="_blank" to = "https://4a89rkoz1ve.typeform.com/to/ubTZDERp?typeform-source=hungry-kitties.com" ><li className="buttons__item">Suggest your Shelter</li></NavLink>
                     </ul>
                 </div>
                 
