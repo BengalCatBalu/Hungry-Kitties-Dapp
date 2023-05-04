@@ -41,8 +41,6 @@ const collectionSchema = new Schema({
         type: String, 
         required: true,
     },
-    nfts: [NFT.schema],
-
 }, { timestamps: true })
 
 const Collection = mongoose.model('Collection', collectionSchema);

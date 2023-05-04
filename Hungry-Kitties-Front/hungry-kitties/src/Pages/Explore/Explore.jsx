@@ -29,10 +29,11 @@ const Explore = () => {
                     <div className="explore__content">
                          <h1 className="explore__title">Explore Charity Events On Sui</h1>
                          <div className="explore__items items__explore">
-                              <Shelter></Shelter>
-                              <Shelter></Shelter>
-                              <Shelter></Shelter>
-                              <Shelter></Shelter>
+                              {collections ? collections.map((collection) => {
+                                  //console.log(collection.image);
+                                  return (
+                                  <Shelter imageUrl={collection.image} description={collection.description} id = {collection._id}/>)
+                              }) : <div> Loading... </div>}
                          </div>
                     </div>
                </div>

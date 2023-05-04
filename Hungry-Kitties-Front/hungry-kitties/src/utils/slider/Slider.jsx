@@ -1,6 +1,3 @@
-import img1 from '../../img/shelter1.webp'
-import img2 from '../../img/shelter2.jpg'
-import img3 from '../../img/shelter3.webp'
 import { Navigation, Autoplay} from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,7 +7,7 @@ import './slider.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export default () => {
+export default ({image1, image2, image3, image4, image5}) => {
   return (
     
     <Swiper
@@ -21,9 +18,11 @@ export default () => {
       navigation
       autoplay
     >
-      <SwiperSlide className='slide'><img src={img1} alt=""/></SwiperSlide>
-      <SwiperSlide><img src={img2} alt=""/></SwiperSlide>
-      <SwiperSlide><img src={img3} alt=""/></SwiperSlide>
+      <SwiperSlide><img src={image1} alt=""/></SwiperSlide>
+      <SwiperSlide><img src={image2} alt=""/></SwiperSlide>
+      <SwiperSlide><img src={image3} alt=""/></SwiperSlide>
+      <SwiperSlide><img src={image4} alt=""/></SwiperSlide>
+      <SwiperSlide><img src={image5} alt=""/></SwiperSlide>
     </Swiper>
 
   );
