@@ -7,6 +7,8 @@ import getUserInfo from '../../utility_functions/server/userApiRequest'
 import NotRegister from './NotRegister/NotRegister'
 import AllNfts from './AllNftsOnWallet/AllNfts'
 import Nft from '../../components/nftCard/NFT'
+import calculatePoints from '../../utility_functions/server/calculatePoints'
+import updateNumberOfHungryKitties from '../../utility_functions/server/updateNumberOfHungryKittes'
 
 
 const Profile = () => {
@@ -14,6 +16,8 @@ const Profile = () => {
     const [user, setUser] = useState(null);
     const [notRegister, setNotRegister] = useState(false);
     const [nfts, setNfts] = useState(null);
+    const [points, setPoints] = useState(null);
+
     useEffect(() => {
         async function fetchData() {
             if (!wallet) {
@@ -26,12 +30,36 @@ const Profile = () => {
                     return;
                 }
                 setUser(data);
+                setPoints(calculatePoints(user?.donated, user?.number_of_hungry_kitties, user?.extra_points))
             } catch (error) {
                 console.log(error);
             }
         }
         fetchData();
     }, [wallet?.address]);
+    function calculate() {
+        console.log(wallet);
+        if (!user) {
+            return;
+        }
+        if (!wallet) {
+            console.log("no wallet");
+            return;
+        } else {
+
+            let k = 0;
+            console.log(wallet.contents.nfts)
+            wallet.contents.nfts.map((nft) => {
+                if (nft.name) {
+                    if (nft.name.includes("Hungry Kitties")) {
+                        k++;
+                    }
+                }
+            });
+            updateNumberOfHungryKitties(wallet.address, k);
+            setPoints(calculatePoints(user?.donated, user?.number_of_hungry_kitties, user?.extra_points))
+        }
+    }
 
     if (!wallet) {
         return <div> No connection </div>
@@ -51,8 +79,8 @@ const Profile = () => {
                     <div className="profile__card card__profile">
                         <div className="card__body">
                             <img src={avatar} alt="kittik" className="card__avatar" />
-                            <div className="card__wallet-address">123</div>
-                            <div className="card__scan">Scan</div>
+                            <div className="card__wallet-address">{ethos.truncateMiddle(wallet?.address, 6)}</div>
+                            <a href={"https://explorer.sui.io/address/" + wallet?.address}><div className="card__scan">Scan</div></a>
                         </div>
                     </div>
                     <div className="profile__charity charity__profile">
@@ -61,8 +89,9 @@ const Profile = () => {
                         </div>
                         <div className="charity__under-text">Thank you!</div>
                         <div className="charity__line"></div>
-                        <div className="charity__points">123    </div>
+                        <div className="charity__points"> {points ? points: 0}</div>
                         <div className="charity__text">Points</div>
+                        <button onClick = {calculate} >Calculate</button>
                         <div className="charity__under-text">Your charity points</div>
                         <div className="charity__line"></div>
                         <div className="charity__discription">Charity Points are Points that affect your chance of winning a pool</div>
@@ -72,19 +101,16 @@ const Profile = () => {
                     <div className="nft__container nft__container-smaller">
                         <div className="nft__lebel">Your NFTs</div>
                         <div className="nft__block">
-                            {wallet.contents?.nfts.map((nft) => (
-                                <>
-                                {console.log("https://explorer.sui.io/object/" + nft.objectId)}
-                                <Nft imageUrl={nft.imageUrl} name={nft.name} id = {nft.objectId} />
-                                </>
-                            ))}
+                            {
+                                wallet.contents?.nfts.slice(0, 5).map((nft) => {
+                                    return (<Nft imageUrl={nft.imageUrl} name={nft.name} id={nft.objectId} />);
+                                })
+                            }
                         </div>
-
                     </div>
                 </div>
 
             </div>
-
         </>
     );
 }

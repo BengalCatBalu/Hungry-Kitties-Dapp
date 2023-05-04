@@ -1,4 +1,11 @@
 const Nft = ({imageUrl, name, id}) => {
+    if (!name) {
+        name = "Some NFT"
+    }
+
+    if (!imageUrl) {
+        imageUrl = "https://harlequin-written-whippet-307.mypinata.cloud/ipfs/QmP3BvWG8B2nuJDjmvYkraZmVk5kkSr5zBUhk3ps3KNEer/balu.webp"
+    }
     return (
         <div className="nft__body">
             <img src={imageUrl} alt="" className="nft__image" />

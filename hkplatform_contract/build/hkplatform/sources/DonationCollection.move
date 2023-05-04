@@ -6,17 +6,16 @@ module hkplatform::DonationCollection {
     use sui::url::{Self, Url};
     use sui::tx_context::{Self, TxContext};
     use sui::coin::{Self, Coin};
-    //use sui::balance::{Self, Balance};
+    use sui::balance::{Self, Balance};
     use sui::sui::SUI;
     //use sui::event::emit;
     use std::vector;
     use sui::transfer;
     use hkplatform::admin::{Self, Admin};
-    //use hkplatform::pool::{Self, Pool};
+
 
     const ETooManyNfts: u64 = 0;
-    const EInsufficientBalance: u64 = 0;
-
+    const EINSUFFICIENT_FUNDS: u64 = 0;
 
     struct DonationCollection has key {
         id: UID,
@@ -25,8 +24,7 @@ module hkplatform::DonationCollection {
         created: u64,
         name: String,
         description: String,
-        // With this link we will receive images of nft
-        ipfs_folder_url: vector<u8>,
+        percent_to_shelter: u64,
         // address of shelter, in future may be will integrate name service
         owner: address,
         // Addresses that donated
@@ -35,12 +33,15 @@ module hkplatform::DonationCollection {
 
     struct NFT has key, store {
         id: UID,
+        name: String,
         url: Url,
         donated: u64,
     }
 
-    public entry fun createCollection(_admin: &Admin, supply_: u64, name_:vector<u8>, description_: vector<u8>, owner_: address, ctx: &mut TxContext) {
-        
+    public entry fun createCollection(_admin: &Admin, supply_: u64, name_:vector<u8>, description_: vector<u8>, percent_to_shelter_: u64, owner_: address, ctx: &mut TxContext) {
+        if (percent_to_shelter_ > 90) {
+            percent_to_shelter_ = 90;
+        };
         // make collection shared object
         transfer::share_object(DonationCollection { 
             id: object::new(ctx),
@@ -48,7 +49,7 @@ module hkplatform::DonationCollection {
             created: 0,
             name: string::utf8(name_),
             description: string::utf8(description_),
-            ipfs_folder_url: vector::empty<u8>(),
+            percent_to_shelter: percent_to_shelter_,
             owner: owner_,
          })
     }
@@ -67,18 +68,23 @@ module hkplatform::DonationCollection {
     public entry fun buy_nft(cap: &mut DonationCollection, payment: &mut Coin<SUI>, paymentValue: u64, url: vector<u8>, ctx: &mut TxContext) {
         assert!(cap.created < cap.supply, ETooManyNfts);
         cap.created = cap.created + 1;
-        let val = coin::value(payment);
-        assert!(val >= paymentValue, EInsufficientBalance);
-        // transfer funds to shelter
-        let shelter_profits = coin::split(payment, paymentValue * 9 / 10, ctx);
-        //let pool_profits = coin::split(payment, paymentValue / 10, ctx);
-        transfer::public_transfer(shelter_profits, cap.owner);
-        let id = object::new(ctx);
-        // transfer nft to buyer
+        let value = coin::value(payment);
+        let adminAddress: address = @0x7be4629ec0dda5a41013bcd9b04b502a1474374d0b3e075ef98d970ca5cb6661;
+        let poolAddress: address = @0xeecd9e5384ffcf63b67793e2496d2f48fbc195c2009a19d7e715a347e335ec6e;
+        assert!(value >= paymentValue, EINSUFFICIENT_FUNDS);
+        let shelter_payment = coin::split<SUI>(payment, paymentValue * cap.percent_to_shelter / 100, ctx);
+        let admin_payment = coin::split<SUI>(payment, paymentValue * 5 / 100, ctx);
+        let pool_payment = coin::split<SUI>(payment, paymentValue * (100 - cap.percent_to_shelter - 5 ) / 100, ctx);
+        transfer::public_transfer(shelter_payment, cap.owner);
+        
+        transfer::public_transfer(pool_payment, poolAddress);
+
+        transfer::public_transfer(admin_payment, adminAddress);
         transfer::transfer(NFT {
+            id: object::new(ctx),
             url: url::new_unsafe_from_bytes(url),
-            id,
-            donated: 0,
+            name: cap.name,
+            donated: paymentValue,
         }, tx_context::sender(ctx))
 
     }

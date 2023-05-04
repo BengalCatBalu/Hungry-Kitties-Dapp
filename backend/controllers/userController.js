@@ -47,7 +47,7 @@ exports.createUser = async (req, res) => {
 
 // DELETE a User
 exports.deleteUser = async (req, res) => {
-    const userId = req.params.userId;
+    const address = req.params.address;
 
     try {
         const user = await User.findById(userId);
@@ -63,12 +63,14 @@ exports.deleteUser = async (req, res) => {
 
 // UPDATE a User
 exports.updateUser = async (req, res) => {
-    const userId = req.params.userId;
+    const address = req.params.address;
 
     try {
-        const user = await User.findById(userId);
+        const user = await User.findOne({ address: address });
         if (!user) {
-            return res.status(404).json({ message: 'User not found' });
+            return res.status(404).json({ message: 'User not found',
+            addr: address
+        });
         }
         if (req.body.address) {
             user.address = req.body.address;

