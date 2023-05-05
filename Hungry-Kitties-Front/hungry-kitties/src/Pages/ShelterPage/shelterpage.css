@@ -24,7 +24,9 @@
 }
 .shelter__slider {
   max-width: 550px;
-  /* height: auto; */
+  /* max-height: 550px; */
+  height: auto;
+  width: 100%;
 }
 @media (max-width: 1000px) {
   .shelter__slider {
