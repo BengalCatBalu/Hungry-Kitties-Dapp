@@ -56,9 +56,9 @@ exports.updateCollection = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'No such workout. Check input ID' })
     }
-    const { name, description, image, additional_images, totalRaised, supply, shelter_address, collection_object_id, ipfs_url, nfts } = req.body
+    const { name, description, image, additional_images, totalRaised, supply, created, shelter_address, collection_object_id, ipfs_url, nfts } = req.body
     try {
-        const collection = await Collection.findByIdAndUpdate(req.params.id, { name, description, image, additional_images, totalRaised, supply, shelter_address, collection_object_id, ipfs_url, nfts}, { new: true })
+        const collection = await Collection.findByIdAndUpdate(req.params.id, { name, description, image, additional_images, totalRaised, supply, created, shelter_address, collection_object_id, ipfs_url, nfts}, { new: true })
         res.status(200).json(collection)
     } catch (error) {
         res.status(404).json({ msg: error.message })

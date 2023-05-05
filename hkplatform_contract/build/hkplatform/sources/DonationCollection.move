@@ -65,21 +65,9 @@ module hkplatform::DonationCollection {
     }
     */
 
-    public entry fun buy_nft(cap: &mut DonationCollection, payment: &mut Coin<SUI>, paymentValue: u64, url: vector<u8>, ctx: &mut TxContext) {
+    public entry fun buy_nft(cap: &mut DonationCollection, paymentValue: u64, url: vector<u8>, ctx: &mut TxContext) {
         assert!(cap.created < cap.supply, ETooManyNfts);
         cap.created = cap.created + 1;
-        let value = coin::value(payment);
-        let adminAddress: address = @0x7be4629ec0dda5a41013bcd9b04b502a1474374d0b3e075ef98d970ca5cb6661;
-        let poolAddress: address = @0xeecd9e5384ffcf63b67793e2496d2f48fbc195c2009a19d7e715a347e335ec6e;
-        assert!(value >= paymentValue, EINSUFFICIENT_FUNDS);
-        let shelter_payment = coin::split<SUI>(payment, paymentValue * cap.percent_to_shelter / 100, ctx);
-        let admin_payment = coin::split<SUI>(payment, paymentValue * 5 / 100, ctx);
-        let pool_payment = coin::split<SUI>(payment, paymentValue * (100 - cap.percent_to_shelter - 5 ) / 100, ctx);
-        transfer::public_transfer(shelter_payment, cap.owner);
-        
-        transfer::public_transfer(pool_payment, poolAddress);
-
-        transfer::public_transfer(admin_payment, adminAddress);
         transfer::transfer(NFT {
             id: object::new(ctx),
             url: url::new_unsafe_from_bytes(url),

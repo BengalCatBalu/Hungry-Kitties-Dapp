@@ -103,6 +103,7 @@ const Profile = () => {
                         <div className="nft__block">
                             {
                                 wallet.contents?.nfts.slice(0, 5).map((nft) => {
+                                    console.log(nft);
                                     return (<Nft imageUrl={nft.imageUrl} name={nft.name} id={nft.objectId} />);
                                 })
                             }

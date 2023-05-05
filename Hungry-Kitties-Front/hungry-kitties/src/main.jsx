@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       dappName="Hungry Kitties KIFT Platform"
       connectMessage='Mew Mew! Welcome!' 
       ethosConfiguration={{
-        //chain: Chain.SUI_TESTNET,
+      chain: Chain.SUI_TESTNET,
         //network: "https://fullnode.testnet.sui.io/"
       }}
     >
