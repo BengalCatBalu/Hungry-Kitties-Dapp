@@ -89,10 +89,11 @@ const Profile = () => {
                         </div>
                         <div className="charity__under-text">Thank you!</div>
                         <div className="charity__line"></div>
+                        <div className="charity__under-text">Your charity points</div>
                         <div className="charity__points"> {points ? points: 0}</div>
                         <div className="charity__text">Points</div>
-                        <button onClick = {calculate} >Calculate</button>
-                        <div className="charity__under-text">Your charity points</div>
+                        <button className='charity__calculate' onClick = {calculate} >Calculate</button>
+                        
                         <div className="charity__line"></div>
                         <div className="charity__discription">Charity Points are Points that affect your chance of winning a pool</div>
                     </div>
