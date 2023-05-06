@@ -25,7 +25,11 @@ body {
   font-family: Roboto;
   font-weight: 600;
   font-size: 15px;
-  background-color: #1E1E1E;
+  height: 1px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 input,
@@ -72,21 +76,32 @@ h6 {
 }
 
 [class*=__container] {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0px auto;
-  padding: 0 10px;
-}
+  max-width: 1260px;
+    width: 100%;
+    margin: 0px auto;
+  }
+  [class*=__container-small] {
+    max-width: 1260px;
+    width: 100%;
+    margin: 0px auto;
+  }
+  [class*=__container-smaller] {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0px auto;
+  }  
 
 
 
 .App{
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-between;
+  flex: 1;
 }
 
 .main{
-  flex: 1 1 auto;
+  flex: 1;
+ padding-bottom: 94px;
 }

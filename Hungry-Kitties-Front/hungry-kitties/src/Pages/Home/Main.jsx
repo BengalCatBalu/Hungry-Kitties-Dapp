@@ -3,14 +3,12 @@ import './main.css'
 import icon from '../../img/icon1.svg'
 import { App } from '../../components/Donut/Donut';
 import { NavLink } from 'react-router-dom';
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-</style>
+
 
 const Home = () => {
     return (
          
-      <>
+  
         <div   className="home">
             <div className="home__container">
                 <div   className="home__title title__home">
@@ -60,7 +58,7 @@ const Home = () => {
             </div>
             
         </div>
-        </>
+  
      );
 }
  

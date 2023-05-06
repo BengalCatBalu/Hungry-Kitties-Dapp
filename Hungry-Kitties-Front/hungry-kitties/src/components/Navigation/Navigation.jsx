@@ -12,7 +12,7 @@ const Navigation = () => {
     const { wallet } = ethos.useWallet()
     const { status } = ethos.useWallet()
     return (
-        <div className="header">
+        <nav className="header">
             <ToastContainer />
             <div className="header__container">
                 <div className="header__block">
@@ -75,7 +75,7 @@ const Navigation = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
 
 
     );

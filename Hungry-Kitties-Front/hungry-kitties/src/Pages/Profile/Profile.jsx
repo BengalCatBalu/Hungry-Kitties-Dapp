@@ -67,9 +67,9 @@ const Profile = () => {
 
     if (notRegister) {
         return (
-            <div className="main">
+            
                 <NotRegister />
-            </div>
+            
         )
     }
     return (
