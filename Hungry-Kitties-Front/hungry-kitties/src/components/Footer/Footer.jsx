@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import ScrollToTop from '../../utils/scrollToTop';
 const Footer = () => {
     return (
-        <>
+        
             <footer className="footer">
                 <div className="footer__container">
                     <div className="footer__upper upper__footer">
@@ -52,7 +52,7 @@ const Footer = () => {
             </footer>
 
 
-        </>
+
 
     );
 }

@@ -1,9 +1,11 @@
+.footer {
+  height: auto;
+  padding-bottom: 10px;
+}
 .footer__container {
-  padding-top: 94px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-bottom: 24px;
 }
 .footer__upper {
   max-width: 1150px;

@@ -24,7 +24,7 @@ const Explore = () => {
       }, []);
 
      return (
-          <>
+     
                <div className="explore__container exlore__container-smaller">
                     <div className="explore__content">
                          <h1 className="explore__title">Explore Charity Events On Sui</h1>
@@ -33,11 +33,11 @@ const Explore = () => {
                                   //console.log(collection.image);
                                   return (
                                   <Shelter imageUrl={collection.image} description={collection.description} id = {collection._id}/>)
-                              }) : <div> Loading... </div>}
+                              }) : <div className='explore__loading'>  Loading... </div>}
                          </div>
                     </div>
                </div>
-          </>
+     
      );
 }
 

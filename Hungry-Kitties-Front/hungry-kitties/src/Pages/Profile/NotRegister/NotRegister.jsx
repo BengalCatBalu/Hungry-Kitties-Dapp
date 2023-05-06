@@ -33,7 +33,7 @@ function NotRegister() {
 
         <div className="register">
             <div className="register__container">
-                <h1 className="register__title">Min Our Register NFT or connect your Wallet</h1>
+                <h1 className="register__title">Mint Our Register NFT or connect your Wallet</h1>
                 <img src={reg} alt="" className="rigster__image" />
                 <button className='register__btn' onClick={register}>
                     Mint Me

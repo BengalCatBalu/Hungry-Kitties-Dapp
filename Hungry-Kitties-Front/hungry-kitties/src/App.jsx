@@ -19,16 +19,17 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop></ScrollToTop>
-        
       <Navigation></Navigation>
+      <div className="main">
       <Routes>
-
-        <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/profile' element={<Profile></Profile>}></Route>
-        <Route path='/explore' element={<Explore></Explore>}></Route>
-        <Route path='/explore/:id' element={<ShelterPage></ShelterPage>}></Route>
+        <Route path='/' element={<Main className='main'></Main>}></Route>
+        <Route path='/profile' element={<Profile className='main'></Profile>}></Route>
+        <Route path='/explore' element={<Explore className='main'></Explore>}></Route>
+        <Route path='/explore/:id' element={<ShelterPage className='main'></ShelterPage>}></Route>
+        
       </Routes>
-      <Footer></Footer>
+      </div>
+      <Footer></Footer>     
       </Router>
 
     </div>
