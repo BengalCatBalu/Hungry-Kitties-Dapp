@@ -33,7 +33,17 @@ const Explore = () => {
                                   //console.log(collection.image);
                                   return (
                                   <Shelter imageUrl={collection.image} description={collection.description} id = {collection._id}/>)
-                              }) : <div className='explore__loading'>  Loading... </div>}
+                              }) : <div className='explore__loading'>
+                                   <div className="explore__loading-text"> Loading...</div> 
+                                   <div className="explore__loading__animation"><div class="l-cricle">
+	<div class="l-cricle__inner">
+		<div class="l-cricle__icon"></div>
+		<div class="l-cricle__icon"></div>
+		<div class="l-cricle__icon"></div>
+	</div>
+</div>
+</div>
+                                    </div>}
                          </div>
                     </div>
                </div>
