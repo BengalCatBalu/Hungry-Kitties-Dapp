@@ -29,6 +29,11 @@ const collectionSchema = new Schema({
         type: Number,
         required: true,
     },
+    created: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
     shelter_address: {
         type: String,
         required: true,

@@ -12,7 +12,7 @@ module hkplatform::pool {
     use hkplatform::admin::{Self, Admin};
     //use hkplatform::admin::{Self, Admin};
     // Constants
-    const IMAGE_URL: vector<u8> = b"https://harlequin-written-whippet-307.mypinata.cloud/ipfs/QmYVcyMvx4J5u7QSqEtL2PJ1NfLGmW4fqgQfBZkM2kpHYv";
+    const IMAGE_URL: vector<u8> = b"https://harlequin-written-whippet-307.mypinata.cloud/ipfs/QmcSxAZTTCyde2rihnJbnEHZTmy2iygzG9QwFZLbGT1gfK/kift.webp";
 
 
     // Structs
