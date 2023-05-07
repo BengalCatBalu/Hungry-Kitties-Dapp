@@ -155,7 +155,10 @@
 		color: #DD6B20;
 		border-radius: 50px;
 		padding: 5px 10px;
-		
+		transition: all 0.2s ease;
+		&:hover{
+			transform: scale(0.9);
+		}
 
 	}
 	// .charity__under-text
@@ -310,4 +313,11 @@
 			background: #b34b05;
 		}
 	}
+}
+
+.not-connected__container{
+	padding-top: 186px;
+	font-size: 50px;
+	text-align: center;
+	font-weight: 300;
 }

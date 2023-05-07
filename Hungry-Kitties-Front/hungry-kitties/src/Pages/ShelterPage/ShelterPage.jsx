@@ -1,4 +1,5 @@
 import './shelterpage.css'
+import ShelterScan from '../../img/scan-shelter.svg'
 import getCollectionInfo from '../../utility_functions/server/collectionApiRequest';
 import React, { useState, useEffect, useCallback } from 'react'
 import Slider from '../../utils/slider/Slider.jsx'
@@ -112,17 +113,19 @@ const ShelterPage = () => {
                             <div className="shelter__discription">
                                 <div className="shelter__text">  <a className='shelter__link' href="">{shelter.name}</a> {shelter.description}
                                 </div>
+                               <img src={ShelterScan} alt="" className="shelter__scan" />
                             </div>
                         </div>
                         <div className="shelter__footer ">
                             <div className="shelter__donate">
                                 <div className="shelter__label">How much would you like to donate</div>
                                 <div className="shelter__input">
-                                    <input min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
-                                    <div className="shelter__token">SUI</div>
+                                    <input type="number"  placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' className="shelter__value" />
+                                    <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
+
                                 </div>
                                 <div className="shelter__mint" onClick={mint}>Mint</div>
-
+                                <div className="shelter__minted">12/50 minted</div>
                             </div>
                         </div>
                     </div>

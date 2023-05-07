@@ -1,7 +1,3 @@
-.home {
-  padding-bottom: 94px;
-}
-
 @media (max-width: 500px) {
   .home {
     padding-top: 80px;
@@ -240,14 +236,14 @@
   text-align: center;
   background-color: #272727;
   border-radius: 40px;
-  padding: 20px;
-  font-size: calc(15px + 8 * ( (100vw - 500px) / 1140));
-  line-height: 110%;
+  padding: 30px 15px;
+  font-size: calc(17px + 6 * ( (100vw - 500px) / 1140));
+  line-height: 150%;
   font-weight: 400;
 }
 @media screen and (max-width: 500px) {
   .item__text {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 @media screen and (min-width: 1640px) {
@@ -255,12 +251,12 @@
     font-size: 23px;
   }
 }
-
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
   .item__text {
-    padding: 20px 37px;
+    max-width: 300px;
   }
 }
+
 .home__distribution {
   padding-top: 188px;
 }

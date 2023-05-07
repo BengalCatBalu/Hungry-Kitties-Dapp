@@ -62,7 +62,7 @@ const Profile = () => {
     }
 
     if (!wallet) {
-        return <div> No connection </div>
+        return <div className='not-connected__container'> Please, connect your wallet </div>
     }
 
     if (notRegister) {
