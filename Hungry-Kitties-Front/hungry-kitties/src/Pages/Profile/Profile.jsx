@@ -84,7 +84,7 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className="profile__charity charity__profile">
-                        <div className="charity__donated">${user?.donated}</div>
+                        <div className="charity__donated">{user?.donated} SUI</div>
                         <div className="charity__text">You have donated to shelters!
                         </div>
                         <div className="charity__under-text">Thank you!</div>
@@ -103,9 +103,9 @@ const Profile = () => {
                         <div className="nft__lebel">Your NFTs</div>
                         <div className="nft__block">
                             {
-                                wallet.contents?.nfts.slice(0, 5).map((nft) => {
+                                wallet.contents?.nfts.map((nft) => {
                                     console.log(nft);
-                                    return (<Nft imageUrl={nft.imageUrl} name={nft.name} id={nft.objectId} />);
+                                    return (<Nft imageUrl={nft.imageUri} name={nft.name} id={nft.objectId} />);
                                 })
                             }
                         </div>

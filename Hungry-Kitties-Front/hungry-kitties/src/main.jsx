@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       connectMessage='Mew Mew! Welcome!' 
       ethosConfiguration={{
       chain: Chain.SUI_TESTNET,
-        //network: "https://fullnode.testnet.sui.io/"
+      network: "https://fullnode.testnet.sui.io/"
       }}
     >
       <App />

@@ -35,7 +35,7 @@ module hkplatform::pool {
     // pay functions
 
     // Send Winners They Gifts
-    public entry fun payToWinners(_admin: &Admin, winner_addresses: vector<address>, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
+    public entry fun payToWinners(_self: PoolOwnerCap, winner_addresses: vector<address>, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
         let i = 0;
         let perc_of_win = 10;
         if (vector::length(&winner_addresses) > 10) {
@@ -47,7 +47,7 @@ module hkplatform::pool {
         }
     }
 
-    public entry fun payToWinner(_admin: &Admin, winner_address: address, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
+    public entry fun payToWinner(_self: PoolOwnerCap, winner_address: address, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
         let reward = coin::split<SUI>(rewards, value, ctx);
         transfer::transfer(new_Gift(reward, ctx), winner_address);
     }
