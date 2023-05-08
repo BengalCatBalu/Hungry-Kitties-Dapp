@@ -1,4 +1,4 @@
-const Nft = ({imageUrl, name, id}) => {
+const NFTCARD = ({imageUrl, name, id}) => {
     if (!name) {
         name = "Some NFT"
     }
@@ -18,4 +18,4 @@ const Nft = ({imageUrl, name, id}) => {
     );
 }
 
-export default Nft;
+export default NFTCARD;

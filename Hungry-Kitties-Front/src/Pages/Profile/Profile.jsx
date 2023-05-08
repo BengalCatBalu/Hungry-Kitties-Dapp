@@ -6,9 +6,9 @@ import React, { useState, useEffect, Component } from 'react'
 import getUserInfo from '../../utility_functions/server/userApiRequest'
 import NotRegister from './NotRegister/NotRegister'
 import AllNfts from './AllNftsOnWallet/AllNfts'
-import Nft from '../../components/nftCard/NFT'
 import calculatePoints from '../../utility_functions/server/calculatePoints'
 import updateNumberOfHungryKitties from '../../utility_functions/server/updateNumberOfHungryKittes'
+import NFTCARD from '../../components/nftCard/NFT'
 
 
 const Profile = () => {
@@ -110,7 +110,7 @@ const Profile = () => {
                             {
                                 wallet.contents?.nfts.map((nft) => {
                                     console.log(nft);
-                                    return (<Nft imageUrl={nft.imageUri} name={nft.name} id={nft.objectId} />);
+                                    return (<NFTCARD imageUrl={nft.imageUri} name={nft.name} id={nft.objectId} />);
                                 })
                             }
                         </div>
