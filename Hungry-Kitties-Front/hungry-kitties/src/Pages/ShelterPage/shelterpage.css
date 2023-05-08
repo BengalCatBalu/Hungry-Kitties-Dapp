@@ -72,6 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
 .shelter__donate {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 @media (max-width: 900px) {
   .shelter__donate {
@@ -81,35 +82,34 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .shelter__label {
-  font-size: 20px;
-  max-width: 300px;
-  font-size: calc(12px + 8 * ( (100vw - 300px) / 1340));
+  font-weight: 300;
+  font-size: calc(15px + 2 * ( (100vw - 300px) / 1340));
 }
 @media screen and (max-width: 300px) {
   .shelter__label {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 1640px) {
   .shelter__label {
-    font-size: 20px;
-  }
-}
-@media (max-width: 900px) {
-  .shelter__label {
-    text-align: center;
-    line-height: 150%;
+    font-size: 17px;
   }
 }
 .shelter__input {
+  flex: 1 1 550px;
   display: flex;
-  align-items: center;
-  /* gap: 40px; */
-  margin-right: 30px;
+  gap: 10px;
+  flex-direction: column;
+  margin-right: auto;
 }
 @media (max-width: 1000px) {
   .shelter__input {
-    gap: 15px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 900px) {
+  .shelter__input {
+    flex: auto;
   }
 }
 .shelter__value {
@@ -120,16 +120,33 @@ input[type=number]::-webkit-outer-spin-button {
   border: 1px solid #DD6B20;
   padding-left: 13px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  max-width: 250px;
+  width: 100%;
+  max-width: 400px;
 }
 .shelter__value:focus {
   outline: none !important;
 }
+.shelter__btn {
+  flex: 0 0 402px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+@media (max-width: 900px) {
+  .shelter__btn {
+    align-items: center;
+    flex: auto;
+    width: 100%;
+  }
+}
 .shelter__mint {
   font-weight: 700;
-  font-size: 34px;
+  font-size: 20px;
+  font-weight: 300;
   text-align: center;
-  padding: 13px 89px;
+  max-width: 330px;
+  width: 100%;
+  padding: 13px 40px;
   background-color: #fff;
   color: black;
   border-radius: 50px;
@@ -145,7 +162,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 .shelter__minted {
-  padding-left: 30px;
+  padding-right: 10px;
+  text-align: center;
   font-weight: 300;
   line-height: 150%;
 }

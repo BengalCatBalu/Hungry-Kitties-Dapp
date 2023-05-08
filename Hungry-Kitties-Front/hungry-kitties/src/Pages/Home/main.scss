@@ -82,11 +82,12 @@
   .buttons__items {
     white-space: nowrap;
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 40px;
   }
   
-  @media (max-width: 900px) {
+/*   @media (max-width: 900px) {
     .buttons__items {
       gap: 100px;
     }
@@ -97,7 +98,7 @@
       align-items: center;
       row-gap: 44px;
     }
-  }
+  } */
   .buttons__item {
     cursor: pointer;
     font-size: 30px;
@@ -105,7 +106,7 @@
     text-align: center;
     background-color: #DD6B20;
     border-radius: 50px;
-    padding: 25px 50px;
+    padding: 25px 20px;
     transition: all 0.2s ease;
   }
   .buttons__item:hover {
@@ -181,8 +182,8 @@
     }
   }
   .item__icon {
-    width: 113px;
-    height: 113px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 20px;
     border-radius: 0px !important;
   }
@@ -193,8 +194,9 @@
     }
   }
   .item__title {
+    text-align: center;
     margin-bottom: 40px;
-    @include fluid-type(40px, 50px);
+    @include fluid-type(25px, 31px);
   }
   @media (max-width: 1500px) {
     .item__title {
@@ -209,10 +211,11 @@
     text-align: center;
     background-color: #272727;
     border-radius: 40px;
-    padding: 30px 15px;
-    @include fluid-type(17px, 23px);  
+    padding: 15px 15px;
+    @include fluid-type(17px, 20px);  
     line-height: 150%;
     font-weight: 400;
+    
     @media (max-width:1000px) {
       max-width: 300px;
     }

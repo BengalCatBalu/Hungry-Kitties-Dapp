@@ -118,14 +118,16 @@ const ShelterPage = () => {
                         </div>
                         <div className="shelter__footer ">
                             <div className="shelter__donate">
-                                <div className="shelter__label">How much would you like to donate</div>
+                                
                                 <div className="shelter__input">
-                                    <input type="number"  placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' className="shelter__value" />
-                                    <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
-
+                                <div className="shelter__label">How much would you like to donate</div>
+                                <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
                                 </div>
-                                <div className="shelter__mint" onClick={mint}>Mint</div>
+                                <div className="shelter__btn">
                                 <div className="shelter__minted">12/50 minted</div>
+                                <div className="shelter__mint" onClick={mint}>Mint</div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
