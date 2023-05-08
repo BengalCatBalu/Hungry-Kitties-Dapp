@@ -113,19 +113,18 @@ const ShelterPage = () => {
                             <div className="shelter__discription">
                                 <div className="shelter__text">  <a className='shelter__link' href="">{shelter.name}</a> {shelter.description}
                                 </div>
-                               <img src={ShelterScan} alt="" className="shelter__scan" />
+                               <a href = {"https://explorer.sui.io/object/" + shelter.collection_object_id + "?network=testnet"}><img src={ShelterScan} alt="" className="shelter__scan" /></a>
                             </div>
                         </div>
                         <div className="shelter__footer ">
                             <div className="shelter__donate">
                                 <div className="shelter__label">How much would you like to donate</div>
                                 <div className="shelter__input">
-                                    <input type="number"  placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' className="shelter__value" />
                                     <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
 
                                 </div>
                                 <div className="shelter__mint" onClick={mint}>Mint</div>
-                                <div className="shelter__minted">12/50 minted</div>
+                                <div className="shelter__minted">{shelter.created}/{shelter.supply} minted</div>
                             </div>
                         </div>
                     </div>
