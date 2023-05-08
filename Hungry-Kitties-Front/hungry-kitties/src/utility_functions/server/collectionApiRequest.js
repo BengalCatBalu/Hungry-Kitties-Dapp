@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { BASE_URI } from '../../constants';
 
 const getCollectionInfo = async (collectionId) => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/collections/` + collectionId);
+    const response = await axios.get(BASE_URI + 'collections/' + collectionId);
     if (response.code === 404) {
       return null;
     }
