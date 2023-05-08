@@ -67,9 +67,9 @@ const Profile = () => {
 
     if (notRegister) {
         return (
-            
-                <NotRegister />
-            
+
+            <NotRegister />
+
         )
     }
     return (
@@ -85,17 +85,22 @@ const Profile = () => {
                     </div>
                     <div className="profile__charity charity__profile">
                         <div className="charity__donated">{user?.donated} SUI</div>
-                        <div className="charity__text">You have donated to shelters!
+                        <div className="charity__text">You have donated to animals!
                         </div>
                         <div className="charity__under-text">Thank you!</div>
                         <div className="charity__line"></div>
                         <div className="charity__under-text">Your charity points</div>
-                        <div className="charity__points"> {points ? points: 0}</div>
+                        <div className="charity__points"> {points ? points : 0}</div>
                         <div className="charity__text">Points</div>
-                        <button className='charity__calculate' onClick = {calculate} >Calculate</button>
-                        
+                        <div className='button__container'>
+                            <button className='charity__calculate' onClick={calculate} >Calculate</button>
+                            <a href = "https://hungry-kitties-team.gitbook.io/whitepaper/kift-platform/charity-points"><button className='charity__calculate'>How it works</button></a>
+                        </div>
+
+
                         <div className="charity__line"></div>
-                        <div className="charity__discription">Charity Points are Points that affect your chance of winning a pool</div>
+                        <div className="charity__discription">Charity Points are Points that affect your chance of winning a pool part on our Charity Giveaway that take part every month! </div>
+
                     </div>
                 </div>
                 <div className="profile__nft nft__profile">
@@ -112,7 +117,7 @@ const Profile = () => {
                     </div>
                 </div>
 
-            </div>
+            </div >
         </>
     );
 }

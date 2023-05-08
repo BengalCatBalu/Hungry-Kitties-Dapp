@@ -21,33 +21,33 @@ const Explore = () => {
                }
           }
           fetchData();
-      }, []);
+     }, []);
 
      return (
-     
-               <div className="explore__container exlore__container-smaller">
-                    <div className="explore__content">
-                         <h1 className="explore__title">Explore Charity Events On Sui</h1>
-                         <div className="explore__items items__explore">
-                              {collections ? collections.map((collection) => {
-                                  //console.log(collection.image);
-                                  return (
-                                  <Shelter imageUrl={collection.image} description={collection.description} id = {collection._id}/>)
-                              }) : <div className='explore__loading'>
-                                   <div className="explore__loading-text"> Loading...</div> 
-                                   <div className="explore__loading__animation"><div class="l-cricle">
-	<div class="l-cricle__inner">
-		<div class="l-cricle__icon"></div>
-		<div class="l-cricle__icon"></div>
-		<div class="l-cricle__icon"></div>
-	</div>
-</div>
-</div>
-                                    </div>}
-                         </div>
+
+          <div className="explore__container exlore__container-smaller">
+               <div className="explore__content">
+                    <h1 className="explore__title">Explore Charity Events On Sui</h1>
+                    <div className="explore__items items__explore">
+                         {collections ? collections.map((collection) => {
+                              //console.log(collection.image);
+                              return (
+                                   <Shelter imageUrl={collection.image} description={collection.description} id={collection._id} />)
+                         }) : <div className='explore__loading'>
+                              <div className="explore__loading-text"> Loading...</div>
+                              <div className="explore__loading__animation"><div class="l-cricle">
+                                   <div class="l-cricle__inner">
+                                        <div class="l-cricle__icon"></div>
+                                        <div class="l-cricle__icon"></div>
+                                        <div class="l-cricle__icon"></div>
+                                   </div>
+                              </div>
+                              </div>
+                         </div>}
                     </div>
                </div>
-     
+          </div>
+
      );
 }
 

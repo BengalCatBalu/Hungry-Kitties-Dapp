@@ -29,7 +29,7 @@ const Footer = () => {
                                     }}> <li>Home</li></NavLink>                            
                                 <NavLink target="_blank" className="links__item" to="https://hungry-kitties.com/"> <li >Main Site</li></NavLink>
                                 <NavLink target="_blank" className="links__item" to="https://4a89rkoz1ve.typeform.com/to/iBZZFgIR?typeform-source=hungry-kitties.com"> <li >Parnerships</li></NavLink>
-                                <NavLink target="_blank" className="links__item" to={"https://explorer.sui.io/object/" + CONTRACT_ID + "?module=DonationCollection&network=testnet"}> <li >Contract</li></NavLink>
+                                <NavLink target="_blank" className="links__item" to={"https://explorer.sui.io/object/" + CONTRACT_ID + "?module=DonationCollection&network=mainnet"}> <li >Contract</li></NavLink>
                             </ul>
                         </div>
                     </div>

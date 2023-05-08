@@ -35,7 +35,8 @@ module hkplatform::pool {
     // pay functions
 
     // Send Winners They Gifts
-    public entry fun payToWinners(_admin: &Admin, winner_addresses: vector<address>, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
+    /*
+    public entry fun payToWinners(_self: PoolOwnerCap, winner_addresses: vector<address>, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
         let i = 0;
         let perc_of_win = 10;
         if (vector::length(&winner_addresses) > 10) {
@@ -43,22 +44,23 @@ module hkplatform::pool {
         };
         while (i < vector::length(&winner_addresses)) {
             let reward = coin::split<SUI>(rewards, value / perc_of_win, ctx);
-            transfer::transfer(new_Gift(reward, ctx), *vector::borrow(&winner_addresses, i));
+            transfer::transfer(new_Gift(&reward, ctx), *vector::borrow(&winner_addresses, i));
         }
     }
 
-    public entry fun payToWinner(_admin: &Admin, winner_address: address, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
+    public entry fun payToWinner(_self: PoolOwnerCap, winner_address: address, rewards: &mut Coin<SUI>, value: u64, ctx: &mut TxContext) {
         let reward = coin::split<SUI>(rewards, value, ctx);
         transfer::transfer(new_Gift(reward, ctx), winner_address);
     }
+    */
 
     // GIFT FUNCTIONS
-    public fun new_Gift(win: Coin<SUI>, ctx: &mut TxContext) : Gift {
-        Gift {
+    public fun new_Gift(win: Coin<SUI>, ctx: &mut TxContext) {
+        transfer::transfer(Gift {
             id: object::new(ctx),
             rewards: win,
             url: url::new_unsafe_from_bytes(*&IMAGE_URL)
-        }
+        }, tx_context::sender(ctx));
     }
 
     public entry fun CollectRewards(gift : Gift, ctx: &mut TxContext) {

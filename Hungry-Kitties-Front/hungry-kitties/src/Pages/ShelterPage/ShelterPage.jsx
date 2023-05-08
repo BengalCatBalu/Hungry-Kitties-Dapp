@@ -11,7 +11,7 @@ import getUserInfo from '../../utility_functions/server/userApiRequest';
 import { ADMIN_ADDRESS, CONTRACT_ID, MIST_VALUE, POOL_ADDRESS } from '../../constants';
 
 const ShelterPage = () => {
-    const {wallet} = ethos.useWallet();
+    const { wallet } = ethos.useWallet();
     const [shelter, setShelter] = useState(null);
     const [collectionId, setCollectionId] = useState(null);
     const { id } = useParams();
@@ -32,14 +32,14 @@ const ShelterPage = () => {
         fetchData();
     }, []);
 
-    const mint = useCallback(async () => {    
+    const mint = useCallback(async () => {
         if (donatedValue == 0) {
             toast.warning('Please, input value', {
                 duration: 1500,
                 closeOnClick: false,
                 closeButton: true,
                 position: 'bottom-center',
-              });
+            });
             return;
         }
         if (!wallet) {
@@ -48,8 +48,8 @@ const ShelterPage = () => {
                 closeOnClick: false,
                 closeButton: true,
                 position: 'bottom-center',
-              });
-              return;
+            });
+            return;
         }
         if (await getUserInfo(wallet.address) == null) {
             toast.warning('Please, reqister to KIFT', {
@@ -57,41 +57,41 @@ const ShelterPage = () => {
                 closeOnClick: false,
                 closeButton: true,
                 position: 'bottom-center',
-              });
-              return;
+            });
+            return;
         }
         try {
-          const txb = new TransactionBlock();
-          const coins = txb.splitCoins(txb.gas, [txb.pure(donatedValue * 9 / 10), txb.pure(donatedValue * 5 / 100), txb.pure(donatedValue * 5 / 100)]);
-          txb.transferObjects([coins[0]], txb.pure(shelter.shelter_address));
-          txb.transferObjects([coins[1]], txb.pure(ADMIN_ADDRESS));
-          txb.transferObjects([coins[2]], txb.pure(POOL_ADDRESS));
-          txb.moveCall({
-            target: `${CONTRACT_ID}::DonationCollection::buy_nft`,
-            arguments: [
-              txb.pure(collectionId),
-              txb.pure(donatedValue),
-              txb.pure(shelter.ipfs_url + (shelter.created + 1) + ".webp"),
-            ]
-          })
-          const response = await wallet.signAndExecuteTransactionBlock({
-            transactionBlock: txb,
-          })
-          updateCreated(shelter.created, id, shelter.raised, donatedValue / MIST_VALUE, wallet?.address)
-          toast.success('Succesfuly donated!', {
-            duration: 1500,
-            closeOnClick: false,
-            closeButton: true,
-            position: 'bottom-center',
-          });
+            const txb = new TransactionBlock();
+            const coins = txb.splitCoins(txb.gas, [txb.pure(donatedValue * 9 / 10), txb.pure(donatedValue * 5 / 100), txb.pure(donatedValue * 5 / 100)]);
+            txb.transferObjects([coins[0]], txb.pure(shelter.shelter_address));
+            txb.transferObjects([coins[1]], txb.pure(ADMIN_ADDRESS));
+            txb.transferObjects([coins[2]], txb.pure(POOL_ADDRESS));
+            txb.moveCall({
+                target: `${CONTRACT_ID}::DonationCollection::buy_nft`,
+                arguments: [
+                    txb.pure(collectionId),
+                    txb.pure(donatedValue),
+                    txb.pure(shelter.ipfs_url + (shelter.created + 1) + ".webp"),
+                ]
+            })
+            const response = await wallet.signAndExecuteTransactionBlock({
+                transactionBlock: txb,
+            })
+            updateCreated(shelter.created, id, shelter.raised, donatedValue / MIST_VALUE, wallet?.address)
+            toast.success('Succesfuly donated!', {
+                duration: 1500,
+                closeOnClick: false,
+                closeButton: true,
+                position: 'bottom-center',
+            });
         } catch (error) {
-          console.log(error)
-          toast.error('Something went wrong!', {
-            duration: 1500,
-            closeOnClick: false,
-            closeButton: true,
-            position: 'bottom-center',
-          });
+            console.log(error)
+            toast.error('Something went wrong!', {
+                duration: 1500,
+                closeOnClick: false,
+                closeButton: true,
+                position: 'bottom-center',
+            });
         }
     })
 
@@ -103,31 +103,31 @@ const ShelterPage = () => {
                     <div className="shelter__block">
                         <div className="shelter__content">
                             <div className="shelter__slider">
-                                <Slider image1 = {shelter.additional_images[0]} 
-                                        image2 = {shelter.additional_images[1]}
-                                        image3 = {shelter.additional_images[2]}
-                                        image4 = {shelter.additional_images[3]}
-                                        image5 = {shelter.additional_images[4]}
-                                className="shelter__swiper"></Slider>
+                                <Slider image1={shelter.additional_images[0]}
+                                    image2={shelter.additional_images[1]}
+                                    image3={shelter.additional_images[2]}
+                                    image4={shelter.additional_images[3]}
+                                    image5={shelter.additional_images[4]}
+                                    className="shelter__swiper"></Slider>
                             </div>
                             <div className="shelter__discription">
                                 <div className="shelter__text">  <a className='shelter__link' href="">{shelter.name}</a> {shelter.description}
                                 </div>
-                               <a href = {"https://explorer.sui.io/object/" + shelter.collection_object_id + "?network=testnet"}><img src={ShelterScan} alt="" className="shelter__scan" /></a>
+                                <a href={"https://explorer.sui.io/object/" + shelter.collection_object_id + "?network=testnet"}><img src={ShelterScan} alt="" className="shelter__scan" /></a>
                             </div>
                         </div>
                         <div className="shelter__footer ">
                             <div className="shelter__donate">
-                                
+
                                 <div className="shelter__input">
-                                <div className="shelter__label">How much would you like to donate</div>
-                                <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)}/>
+                                    <div className="shelter__label">How much would you like to donate(SUI)</div>
+                                    <input placeholder='SUI' min='0.5' step='0.5' name='sui' id='sui' type="number" className="shelter__value" onChange={(event) => setDonatedValue(event.target.value * MIST_VALUE)} />
                                 </div>
                                 <div className="shelter__btn">
-                                <div className="shelter__minted">12/50 minted</div>
-                                <div className="shelter__mint" onClick={mint}>Mint</div>
+                                    <div className="shelter__minted">{shelter.created}/{shelter.supply} minted</div>
+                                    <div className="shelter__mint" onClick={mint}>Mint</div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,17 @@ const ShelterPage = () => {
             </div>
         )
     } else {
-        return <div> Loading...</div>
+        return <div className='shelter__loading'>
+            <div className="explore__loading-text"> Loading...</div>
+            <div className="explore__loading__animation"><div class="l-cricle">
+                <div class="l-cricle__inner">
+                    <div class="l-cricle__icon"></div>
+                    <div class="l-cricle__icon"></div>
+                    <div class="l-cricle__icon"></div>
+                </div>
+            </div>
+            </div>
+        </div>
     }
 }
 

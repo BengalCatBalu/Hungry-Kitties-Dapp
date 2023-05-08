@@ -20,6 +20,7 @@ module hkplatform::DonationCollection {
     struct DonationCollection has key {
         id: UID,
         // Number of Nft in collection
+        supply: u64,
         created: u64,
         name: String,
         description: String,
