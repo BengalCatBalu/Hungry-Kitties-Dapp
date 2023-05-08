@@ -3,11 +3,9 @@ import discord from '../../img/discord.svg'
 import twitter from '../../img/twitter.svg'
 import './footer.css'
 import { NavLink } from 'react-router-dom';
-import ScrollToTop from '../../utils/scrollToTop';
 import { CONTRACT_ID } from '../../constants';
 const Footer = () => {
-    return (
-        
+    return (     
             <footer className="footer">
                 <div className="footer__container">
                     <div className="footer__upper upper__footer">
@@ -28,33 +26,20 @@ const Footer = () => {
                                             const topElement = document.querySelector('body');
                                             topElement.scrollIntoView({ behavior: 'smooth' });
                                         }
-                                    }}> <li>Home</li></NavLink>
-                                <li className="links__item"> <a target='_blank' href="https://hungry-kitties.com/">Main Site</a></li>
-                                <li className="links__item"><a target='_blank' href="https://4a89rkoz1ve.typeform.com/to/iBZZFgIR?typeform-source=hungry-kitties.com">Parnerships</a></li>
-                                <li className="links__item"><a target='_blank' href={"https://explorer.sui.io/object/" + CONTRACT_ID + "?module=DonationCollection&network=testnet"}>Contract</a></li>
+                                    }}> <li>Home</li></NavLink>                            
+                                <NavLink target="_blank" className="links__item" to="https://hungry-kitties.com/"> <li >Main Site</li></NavLink>
+                                <NavLink target="_blank" className="links__item" to="https://4a89rkoz1ve.typeform.com/to/iBZZFgIR?typeform-source=hungry-kitties.com"> <li >Parnerships</li></NavLink>
+                                <NavLink target="_blank" className="links__item" to={"https://explorer.sui.io/object/" + CONTRACT_ID + "?module=DonationCollection&network=testnet"}> <li >Contract</li></NavLink>
                             </ul>
                         </div>
-
                     </div>
                     <div className="footer__line"></div>
                     <div className="footer__bottom bottom__footer">
                         <div className="bottom__text">© 2023 Hungry Kitties. All rights reserved.</div>
                         <a href='mailto:hungrykittties@gmail.com' className="bottom__text">hungrykittties@gmail.com</a>
                     </div>
-
-
-
                 </div>
-
-
-
-
-
             </footer>
-
-
-
-
     );
 }
 

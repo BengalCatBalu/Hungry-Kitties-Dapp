@@ -1,6 +1,7 @@
-
 import './main.css'
-import icon from '../../img/icon1.svg'
+import sui from './icons/sui.svg'
+import publish from './icons/public.svg'
+import charity from './icons/charity.svg'
 import { App } from '../../components/Donut/Donut';
 import { NavLink } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ const Home = () => {
                     <h2 className="title__text">Transforming digital art into tangible impact with Hungry Kitties charitable NFTs.</h2>
                     <ul className="buttons__items">
                       <NavLink target="_blank" to = "https://4a89rkoz1ve.typeform.com/to/ubTZDERp?typeform-source=hungry-kitties.com" ><li className="buttons__item">Suggest your Shelter</li></NavLink>
+                      <NavLink target="_blank" to = "https://hungry-kitties-team.gitbook.io/whitepaper/" ><li className="buttons__item">Whitepaper</li></NavLink>
                     </ul>
                 </div>
                 
@@ -29,19 +31,20 @@ const Home = () => {
                     <div className="cards__items">
                         <div className="cards__item item__cards">
                             <div    className="item__body">
-                                <img src={icon} alt="" className="item__icon" />
-                                <div className="item__title">Charity</div>
-                                <div className="item__text">By buying and selling NFT art, you can help those in need: a portion of the proceeds goes to charity.</div>
+                                <img src={sui} alt="" className="item__icon" />
+                                <div className="item__title">NFT for Charity</div>
+                                <div className="item__text">Part of the proceeds from the sale of NFT collections goes to charity, which makes the project more responsible and significant</div>
                             </div>
                             <div className="item__body">
-                                <img src={icon} alt="" className="item__icon" />
-                                <div className="item__title">Charity</div>
-                                <div className="item__text">By buying and selling NFT art, you can help those in need: a portion of the proceeds goes to charity.</div>
+                                <img src={publish} alt="" className="item__icon" />
+                                <div className="item__title">Publicity</div>                                             
+                                <div className="item__text">A charity NFT project can attract the attention of the general public due to its uniqueness and opportunities to purchase digital works</div>
                             </div>
                             <div className="item__body">
-                                <img src={icon} alt="" className="item__icon" />
-                                <div className="item__title">Charity</div>
-                                <div className="item__text">By buying and selling NFT art, you can help those in need: a portion of the proceeds goes to charity.</div>
+                                <img src={charity} alt="" className="item__icon" />
+                                <div className="item__title">Technology + Charity</div>
+                                <div className="item__text">The NFT charity project may become recommended for modern technologies and charitable activities, which may attract new participants and donations to charitable organizations
+                                </div>
                             </div>
                         </div>
                     </div>
